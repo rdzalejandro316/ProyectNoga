@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\InBuscarReferencia\obj\Debug\
+D:\NogaApp\Library\project\InBuscarReferencia\obj\Debug\
 InBuscarReferencia
 none
 false
@@ -16,5 +16,5 @@ DEBUG;TRACE
 131569487696
 InBuscarReferencia.xaml;SaldosBodegas.xaml;
 
-False
+True
 

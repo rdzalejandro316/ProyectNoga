@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GeneracionPedidosProvedores\obj\Debug\
+D:\NogaApp\Library\project\GeneracionPedidosProvedores\obj\Debug\
 GeneracionPedidosProvedores
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 21462938496
 
 5658701620
-28-888686583
+281712556477
 Configuracion.xaml;GeneracionPedidosProvedores.xaml;
 
-False
+True
 

@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\
+D:\NogaApp\Library\project\ConsultaPedidos\obj\Debug\
 ConsultaPedidos
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 31964453311
 
 61721728663
-22-1729352862
+22-969890024
 ConsultaPedidos.xaml;DetalleBackorder.xaml;DetallePedidoVenta.xaml;
 
-False
+True
 

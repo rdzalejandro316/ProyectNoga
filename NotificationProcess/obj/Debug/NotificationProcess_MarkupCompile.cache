@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\NotificationProcess\obj\Debug\
+D:\NogaApp\Library\project\NotificationProcess\obj\Debug\
 NotificationProcess
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 3-2099271684
 
 6808249225
-19610561139
+191849438360
 AddProcess.xaml;AddUserProcess.xaml;NotificationProcess.xaml;
 
-False
+True
 

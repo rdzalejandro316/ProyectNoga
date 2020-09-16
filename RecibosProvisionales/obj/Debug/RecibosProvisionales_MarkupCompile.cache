@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\RecibosProvisionales\obj\Debug\
+D:\NogaApp\Library\project\RecibosProvisionales\obj\Debug\
 RecibosProvisionales
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 2484015320
 
 5-2098929768
-27557359387
+27-1168380107
 FormasDePago.xaml;RecibosProvisionales.xaml;
 
-False
+True
 

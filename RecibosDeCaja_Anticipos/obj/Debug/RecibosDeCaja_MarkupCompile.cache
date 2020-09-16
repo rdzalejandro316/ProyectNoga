@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\RecibosDeCaja_Anticipos\obj\Debug\
+D:\NogaApp\Library\project\RecibosDeCaja_Anticipos\obj\Debug\
 RecibosDeCaja
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 3-638541008
 
 6-1069519335
-27-1760056129
+27-531176256
 FormasDePago.xaml;RecibosDeCaja.xaml;ViewDocuments.xaml;
 
 True

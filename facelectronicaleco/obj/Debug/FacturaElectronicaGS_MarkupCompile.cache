@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\facelectronicaleco\obj\Debug\
+D:\NogaApp\Library\project\facelectronicaleco\obj\Debug\
 FacturaElectronicaGS
 none
 false
@@ -16,5 +16,5 @@ DEBUG;TRACE
 15-177486583
 FacturaElectronicaGS.xaml;
 
-False
+True
 

@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImpresionFactura_Cart_Ped_Rec\obj\Debug\
+D:\NogaApp\Library\project\ImpresionFactura_Cart_Ped_Rec\obj\Debug\
 ImpresionFactura_Cart_Ped_Rec
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 2-857609273
 
 51224018595
-19355669129
+19-999125134
 Impresion.xaml;ImpresionFactura_Cart_Ped_Rec.xaml;
 
-False
+True
 

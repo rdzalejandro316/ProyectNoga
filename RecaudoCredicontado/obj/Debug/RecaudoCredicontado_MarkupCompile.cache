@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\RecaudoCredicontado\obj\Debug\
+D:\NogaApp\Library\project\RecaudoCredicontado\obj\Debug\
 RecaudoCredicontado
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 21146443023
 
 5977046054
-261488716630
+261407833529
 FormasDePago.xaml;RecaudoCredicontado.xaml;
 
-False
+True
 

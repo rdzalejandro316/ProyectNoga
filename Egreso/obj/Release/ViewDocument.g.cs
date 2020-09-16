@@ -16,6 +16,7 @@ using Syncfusion.UI.Xaml.Grid;
 using Syncfusion.UI.Xaml.Grid.RowFilter;
 using Syncfusion.UI.Xaml.TreeGrid;
 using Syncfusion.Windows;
+using Syncfusion.Windows.Controls.Notification;
 using Syncfusion.Windows.Shared;
 using Syncfusion.Windows.Tools.Controls;
 using System;

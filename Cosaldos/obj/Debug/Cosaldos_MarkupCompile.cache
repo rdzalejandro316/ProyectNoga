@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\Cosaldos\obj\Debug\
+D:\NogaApp\Library\project\Cosaldos\obj\Debug\
 Cosaldos
 none
 false
@@ -16,5 +16,5 @@ DEBUG;TRACE
 131569487696
 Cosaldos.xaml;
 
-False
+True
 

@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\MenuReporteSetting\obj\Debug\
+D:\NogaApp\Library\project\MenuReporteSetting\obj\Debug\
 MenuReporteSetting
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 2780419045
 
 528059366
-15-289588562
+151977397965
 Form.xaml;MenuReporteSetting.xaml;
 
-False
+True
 

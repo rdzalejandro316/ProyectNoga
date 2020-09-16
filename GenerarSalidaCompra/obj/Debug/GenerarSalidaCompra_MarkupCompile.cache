@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\
+D:\NogaApp\Library\project\GenerarSalidaCompra\obj\Debug\
 GenerarSalidaCompra
 none
 false
@@ -16,5 +16,5 @@ DEBUG;TRACE
 131254293103
 GenerarSalidaCompra.xaml;
 
-False
+True
 
