@@ -1,0 +1,136 @@
+﻿<Window x:Class="WindowPV.DetalleCompra"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+        xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+        xmlns:local="clr-namespace:WindowPV"
+        mc:Ignorable="d"
+        Title="DetalleCompra" Height="400" Width="650"  WindowStartupLocation="CenterScreen"  syncfusionskin:SfSkinManager.VisualStyle="Metro" ResizeMode="NoResize" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <Style TargetType="SiaSf:FilterToggleButton">
+            <Setter Property="Height" Value="15"/>
+            <Setter Property="Width" Value="15" />
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Gray"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1"  Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Documento Compra : " VerticalAlignment="Center" Margin="10 0 0 0" FontWeight="ExtraBlack"/>
+                <TextBlock Name="Documento" Text="" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" />
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1"  Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Border Background="#2980b9" Margin="10,1,0,0" HorizontalAlignment="Left">
+                    <TextBlock Text="Datos de Factura" Margin="10,5,10,5" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Bold"/>
+                </Border>
+
+                <Grid Grid.Row="1" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="TextBlock" x:Key="title">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                        <Style TargetType="TextBox" x:Key="values">
+                            <Setter Property="Margin" Value="2"/>
+                            <Setter Property="IsReadOnly" Value="True"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                        </Style>
+                    </Grid.Resources>
+
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Fecha de Trn : " Style="{StaticResource title}"/>
+                    <TextBox Name="TX_fecTrn" Grid.Column="1" Grid.Row="1" Style="{StaticResource values}"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Cliente : " Style="{StaticResource title}"/>
+                    <TextBox Name="TX_cod_cli" Grid.Column="1" Grid.Row="2" Style="{StaticResource values}"/>
+                    
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Vendedor : " Style="{StaticResource title}"/>
+                    <TextBox Name="TX_vend" Grid.Column="1" Grid.Row="3" Style="{StaticResource values}"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Nota : " Style="{StaticResource title}" Margin="10 0 0 0"/>
+                    <TextBox x:Name="TextBx_obse" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2"  TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+
+
+
+                </Grid>
+
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2" Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1"  Margin="5">
+            <Grid>
+                <SiaSf:SfDataGrid x:Name="dataGridCuerpo"  AllowResizingColumns="True"  AutoGenerateColumns="False" AllowFiltering="True"  HeaderStyle="{StaticResource headerStyle}" Margin="5" FontSize="10">
+                    <SiaSf:SfDataGrid.Columns>
+                        <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="cod_ref" Width="80"/>
+                        <SiaSf:GridTextColumn HeaderText="Referencia" MappingName="nom_ref" Width="120" />
+                        <SiaSf:GridNumericColumn HeaderText="Cant" MappingName="cantidad" Width="50" NumberDecimalDigits="2" />
+                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_uni, StringFormat='{}{0:c}'}"  HeaderText="Valor Unit" TextAlignment="Right" Width="90"/>
+                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=subtotal, StringFormat='{}{0:c}'}"  HeaderText="Subtotal" TextAlignment="Right" Width="90"/>
+                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_iva, StringFormat='{}{0:c}'}"  HeaderText="IVA" TextAlignment="Right" Width="90"/>
+                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=tot_tot, StringFormat='{}{0:c}'}"  HeaderText="Total" TextAlignment="Right" Width="100"/>
+                    </SiaSf:SfDataGrid.Columns>
+                </SiaSf:SfDataGrid>
+            </Grid>
+        </Border>
+
+
+        <Grid Background="#373737" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Total Referencias : " VerticalAlignment="Center" Foreground="White" FontWeight="Bold" Margin="5 0 0 0"/>
+            <TextBlock Name="Total" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" />
+        </Grid>
+
+    </Grid>
+
+</Window>

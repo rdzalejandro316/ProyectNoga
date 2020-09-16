@@ -1,0 +1,14 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito.csprojAssemblyReference.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito.csproj.CopyComplete
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeCredito\obj\Debug\AnalisisDeCredito.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\AnalisisDeCredito.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\AnalisisDeCredito.pdb

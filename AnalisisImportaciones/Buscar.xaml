@@ -1,0 +1,110 @@
+﻿<Window x:Class="AnalisisImportaciones.Buscar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnalisisImportaciones"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d"
+        Title="Buscar" Height="300" Width="500" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner">
+
+    <Window.Resources>
+        <Style TargetType="syncfusion:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="Background" Value="#373737"/>
+        </Style>
+        <Style TargetType="Border" x:Key="borde">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
+    <Grid>
+        <Grid Name="GridImportaciones" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid Background="#373737">
+                <TextBlock Text="Importacion 980" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+            <Border Grid.Row="1" Style="{StaticResource borde}">
+                <Grid>
+                    <syncfusion:SfBusyIndicator  Focusable="False" Name="sfBusyIndicator" Margin="5" VerticalAlignment="Center" FontSize="12" AnimationSpeed="100" AnimationType="Rainy" Header="Cargando Datos" IsBusy="False"/>
+                    <syncfusion:SfDataGrid Name="dataGridSearch" Grid.Row="1" Margin="2" EnableDataVirtualization = "True" AutoGenerateColumns="False" ShowGroupDropArea="False" FontSize="12" AllowFiltering="True" HeaderStyle="{StaticResource headerStyle}" FilterChanged="dataGrid_FilterChanged">
+                        <syncfusion:SfDataGrid.Columns>
+                            <syncfusion:GridTextColumn HeaderText="Imporatacion" MappingName="n_imp" Width="300"/>
+                        </syncfusion:SfDataGrid.Columns>
+                    </syncfusion:SfDataGrid>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Total : " FontWeight="Bold" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                <TextBlock Name="Tx_total" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <Button Name="BtnSel" Background="#03A9F4" HorizontalAlignment="Right" Margin="2" Grid.Column="1" Width="100" BorderBrush="{x:Null}" Content="Seleccionar" Foreground="White" Click="BtnSel_Click" Cursor="Hand"/>
+            </Grid>
+        </Grid>
+        
+        <Grid Name="GridDocImportacion" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid Background="#373737">
+                <TextBlock Name="Tx_title" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+            <Border Grid.Row="1" Style="{StaticResource borde}">
+                <Grid>
+                    <syncfusion:SfBusyIndicator  Focusable="False" Name="sfBusyIndicatorDoc" Margin="5" VerticalAlignment="Center" FontSize="12" AnimationSpeed="100" AnimationType="Rainy" Header="Cargando Datos" IsBusy="False"/>
+
+                    <syncfusion:SfDataGrid Name="dataGridSearchDoc" Grid.Row="1" Margin="2" AutoGenerateColumns="False" ShowGroupDropArea="False" FontSize="12" AllowFiltering="True" HeaderStyle="{StaticResource headerStyle}" FilterChanged="dataGrid_FilterChanged">
+                        <syncfusion:SfDataGrid.Columns>
+                            <syncfusion:GridTemplateColumn MappingName="Doc" Width="40"  AllowFiltering="False">
+                                <syncfusion:GridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="BtnDoc" Content="..." Click="BtnDoc_Click" Background="#03A9F4" BorderBrush="{x:Null}" Cursor="Hand"/>
+                                    </DataTemplate>
+                                </syncfusion:GridTemplateColumn.CellTemplate>
+                            </syncfusion:GridTemplateColumn>
+                            <syncfusion:GridTextColumn HeaderText="Trn" MappingName="cod_trn" Width="70"/>
+                            <syncfusion:GridTextColumn HeaderText="Documento" MappingName="num_trn" Width="100"/>
+                            <syncfusion:GridCurrencyColumn HeaderText="Tasa Cambio" MappingName="tc" Width="100"/>
+                            <syncfusion:GridDateTimeColumn HeaderText="Fecha"   MappingName="fec_trn" Width="100" />
+                            <syncfusion:GridTextColumn HeaderText="Provedor" MappingName="cod_prv" Width="100" />
+                        </syncfusion:SfDataGrid.Columns>
+                    </syncfusion:SfDataGrid>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Total : " FontWeight="Bold" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                <TextBlock Name="Tx_totalDoc" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+
+
+
+
+</Window>

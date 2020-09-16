@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="SiasoftAppExt.ListaDePrecios"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+             xmlns:local="clr-namespace:SiasoftAppExt"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1200">
+
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="Boton">
+            <Setter Property="Background" Value="DodgerBlue"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10 5 10 5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style TargetType="SiaSf:FilterToggleButton">
+            <Setter Property="Height" Value="15"/>
+            <Setter Property="Width" Value="15" />
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Gray"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <SiaSf:TabControlExt Name="TabControl1" Margin="5,0,10,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  SiaSf:SkinStorage.VisualStyle="Metro"  IsDisableUnloadTabItemExtContent="True">
+        <SiaSf:TabItemExt Name="tabItemExt1"  Header="tab 1" FontSize="14" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Background="#373737">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="Importar" Style="{StaticResource Boton}"/>
+                        <Button Content="Guardar" Style="{StaticResource Boton}"/>
+                    </StackPanel>
+                </Grid>
+
+                <SiaSf:SfDataGrid Grid.Row="1" FrozenColumnCount="5" AutoGenerateColumns="False" AllowResizingColumns="True" x:Name="Grid1"  EnableDataVirtualization = "True"  ShowGroupDropArea="False" FontSize="10" AllowFiltering="True"  HeaderStyle="{StaticResource headerStyle}"  Margin="5">
+                    <SiaSf:SfDataGrid.Columns>
+                        <SiaSf:GridTextColumn HeaderText="campo" MappingName="nom_trn"/>
+                        <SiaSf:GridTextColumn HeaderText="campo" MappingName="nom_trn"/>
+                        <SiaSf:GridTextColumn HeaderText="campo" MappingName="nom_trn"/>
+                        <SiaSf:GridTextColumn HeaderText="campo" MappingName="nom_trn"/>
+                        <SiaSf:GridTextColumn HeaderText="campo" MappingName="nom_trn"/>
+                    </SiaSf:SfDataGrid.Columns>
+                </SiaSf:SfDataGrid>
+            </Grid>
+        </SiaSf:TabItemExt>
+        <SiaSf:TabItemExt Name="tabItemExt2"  Header="tab 2" FontSize="14" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Background="#373737">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="Importar" Style="{StaticResource Boton}"/>
+                        <Button Content="Guardar" Style="{StaticResource Boton}"/>
+                    </StackPanel>
+                </Grid>
+
+                <SiaSf:SfDataGrid Grid.Row="1" FrozenColumnCount="5" AutoGenerateColumns="False" AllowResizingColumns="True" x:Name="Grid2"  EnableDataVirtualization = "True"  ShowGroupDropArea="False" FontSize="10" AllowFiltering="True"  HeaderStyle="{StaticResource headerStyle}"  Margin="5">
+                    <SiaSf:SfDataGrid.Columns>
+                        <SiaSf:GridTextColumn HeaderText="campo" MappingName="nom_trn"/>
+                        <SiaSf:GridTextColumn HeaderText="campo" MappingName="nom_trn"/>
+                        <SiaSf:GridTextColumn HeaderText="campo" MappingName="nom_trn"/>
+                        <SiaSf:GridTextColumn HeaderText="campo" MappingName="nom_trn"/>
+                        <SiaSf:GridTextColumn HeaderText="campo" MappingName="nom_trn"/>
+                    </SiaSf:SfDataGrid.Columns>
+                </SiaSf:SfDataGrid>
+            </Grid>
+        </SiaSf:TabItemExt>
+    </SiaSf:TabControlExt>
+    
+</UserControl>

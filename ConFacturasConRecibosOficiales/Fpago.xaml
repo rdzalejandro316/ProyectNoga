@@ -1,0 +1,51 @@
+﻿<Window x:Class="ConFacturasConRecibosOficiales.Fpago"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConFacturasConRecibosOficiales"
+        xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d"
+        Title="Fpago" Height="300" Width="500" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <Style TargetType="SiaSf:GridCell">
+            <Setter Property="BorderBrush" Value="LightGray" />
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+        </Style>
+        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="Background" Value="#4294DE"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="FontSize" Value="11"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#373737">
+            <StackPanel VerticalAlignment="Center" Margin="5 0 0 0" Orientation="Horizontal">
+                <TextBlock Text="Factura : " Foreground="White" FontWeight="Bold"/>
+                <TextBlock Name="Tx_facutura" Foreground="White"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <SiaSf:SfDataGrid  x:Name="dataGridCxCD" AutoGenerateColumns="False" ShowGroupDropArea="True" FontSize="10" FontFamily="Times New Roman" AllowFiltering="True"  HeaderStyle="{StaticResource headerStyle}" >
+                <SiaSf:SfDataGrid.Columns>
+                    <SiaSf:GridTextColumn HeaderText="cod pag" MappingName="cod_pag" Width="50"/>
+                    <SiaSf:GridTextColumn HeaderText="F pago" MappingName="nom_ban" Width="120" />
+                    <SiaSf:GridTextColumn DisplayBinding="{Binding Path=deb_mov, StringFormat='{}{0:N2}'}" Width="100" HeaderText="Valor" TextAlignment="Right" AllowFiltering="False"/>
+                    <SiaSf:GridTextColumn HeaderText="Fec Con" MappingName="fec_con" Width="100"/>
+                    <SiaSf:GridTextColumn HeaderText="Fec Venc" MappingName="fec_venc" Width="100"/>
+                </SiaSf:SfDataGrid.Columns>
+            </SiaSf:SfDataGrid>
+        </Grid>
+            
+            
+    </Grid>
+    
+</Window>

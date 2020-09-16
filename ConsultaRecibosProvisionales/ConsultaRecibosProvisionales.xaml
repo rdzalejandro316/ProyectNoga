@@ -1,0 +1,64 @@
+﻿<Window x:Class="SiasoftAppExt.ConsultaRecibosProvisionales"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SiasoftAppExt"
+             xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+             Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <SiaSf:TabControlExt Name="TabControl1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  SiaSf:SkinStorage.VisualStyle="Metro"  IsDisableUnloadTabItemExtContent="False" EnableLabelEdit="False">
+            <SiaSf:TabItemExt Name="tabItemExt1"  Header="Configuracion" Width="Auto" HeaderMargin="10 0 10 0 " FontSize="12" >
+                <Grid>
+                    <Grid  x:Name="GridConfiguracion" Height="280"  Width="400" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border Background="White">
+                            <Border.Effect>
+                                <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                            </Border.Effect>
+                        </Border>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1.5*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Vendedor : " VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                            <ComboBox x:Name="CmbVen" Height="30"  Width="200" Margin="5" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" SelectedValue="{Binding cod_ven,Mode=TwoWay,ValidatesOnDataErrors=True,NotifyOnValidationError=true,ValidatesOnExceptions=true}"  SelectedItem="{Binding SelectedItem}" x:FieldModifier="public"/>
+
+                            <TextBlock Grid.Row="1" Text="Fecha Inicial : " VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                            <DatePicker Name="Fec_ini" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="5" Height="30" Width="150"/>
+
+                            <TextBlock Grid.Row="2" Text="Fecha Final : " VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                            <DatePicker Name="Fec_fin" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="5" Height="30" Width="150"/>
+
+                            <TextBlock Grid.Row="3" Text="Cliente : " VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                            <TextBox Name="Tx_Tercer" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Width="200" PreviewKeyDown="Tx_Tercer_PreviewKeyDown" LostFocus="Tx_Tercer_LostFocus"/>
+
+                            <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+                                    <Button Name="BtnConsultar" Background="#03A9F4" Content="Consultar" Foreground="White" BorderBrush="{x:Null}" Margin="5" Width="100" Height="30" Cursor="Hand" Click="BtnConsultar_Click"/>
+                                    <Button Name="BtnCancelar" Background="#03A9F4" Content="Cancelar" Foreground="White" BorderBrush="{x:Null}" Margin="5" Width="100" Height="30" Cursor="Hand" Click="BtnCancelar_Click"/>
+                                </StackPanel>
+                                                                
+                            </Grid>
+
+                        </Grid>
+                    </Grid>
+
+
+                </Grid>
+            </SiaSf:TabItemExt>
+        </SiaSf:TabControlExt>
+    </Grid>
+
+</Window>

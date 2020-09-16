@@ -1,0 +1,14 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores.csprojAssemblyReference.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores.csproj.CopyComplete
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnalisisDeProvedores\obj\Debug\AnalisisDeProvedores.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\AnalisisDeProvedores.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\AnalisisDeProvedores.pdb

@@ -1,0 +1,13 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra.csprojAssemblyReference.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\GenerarSalidaCompra\obj\Debug\GenerarSalidaCompra.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\GenerarSalidaCompra.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\GenerarSalidaCompra.pdb

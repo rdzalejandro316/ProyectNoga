@@ -1,0 +1,13 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes.csprojAssemblyReference.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\project\ConfigReportes\obj\Debug\ConfigReportes.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\ConfigReportes.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019\Library\ConfigReportes.pdb

@@ -1,0 +1,14 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje.csprojAssemblyReference.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje.csproj.CopyComplete
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\PvAjustePorcentaje\obj\Debug\PvAjustePorcentaje.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\PvAjustePorcentaje.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\PvAjustePorcentaje.pdb

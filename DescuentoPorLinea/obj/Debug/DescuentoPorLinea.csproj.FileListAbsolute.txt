@@ -1,0 +1,12 @@
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\DescuentoPorLinea\obj\Debug\DescuentoPorLinea.csprojResolveAssemblyReference.cache
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\DescuentoPorLinea\obj\Debug\DescuentoPorLinea.g.cs
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\DescuentoPorLinea\obj\Debug\DescuentoPorLinea_MarkupCompile.cache
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\DescuentoPorLinea\obj\Debug\DescuentoPorLinea_MarkupCompile.lref
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\DescuentoPorLinea\obj\Debug\DescuentoPorLinea.baml
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\DescuentoPorLinea\obj\Debug\DescuentoPorLinea.g.resources
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\DescuentoPorLinea\obj\Debug\DescuentoPorLinea.Properties.Resources.resources
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\DescuentoPorLinea\obj\Debug\DescuentoPorLinea.csproj.GenerateResource.Cache
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\DescuentoPorLinea\obj\Debug\DescuentoPorLinea.dll
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\DescuentoPorLinea\obj\Debug\DescuentoPorLinea.pdb
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\DescuentoPorLinea.dll
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\DescuentoPorLinea.pdb

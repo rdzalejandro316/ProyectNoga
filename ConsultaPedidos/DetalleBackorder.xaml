@@ -1,0 +1,105 @@
+﻿<Window x:Class="ConsultaPedidos.DetalleBackorder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:SiaSf="http://schemas.syncfusion.com/wpf"     
+        xmlns:local="clr-namespace:ConsultaPedidos"        
+        Title="Detalle Backorder" Height="450" Width="800" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="Background" Value="#373737"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="LightGray" BorderThickness="1" Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Referencia : " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5 0 2 0" FontWeight="Bold"/>
+                <TextBlock Name="Name_Ref2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Name="Cod_Ref" Visibility="Hidden"/>
+                <TextBlock Name="Cod_Bod" Visibility="Hidden"/>
+                <TextBlock Name="TXT_mesini" Visibility="Hidden"/>
+                <TextBlock Name="TXT_fec_con" Visibility="Hidden"/>
+                <TextBlock Name="TXT_backorder" Visibility="Hidden"/>
+                <TextBlock Name="TXT_fec_pedido" Visibility="Hidden"/>
+                <TextBlock Name="TXT_empresa" Visibility="Hidden"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="1" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Orden de compra - resta de compras" Foreground="DodgerBlue" Margin="5 0 0 0"/>
+
+                    <SiaSf:SfDataGrid Grid.Row="1" x:Name="dataGridbackorder" FrozenColumnCount="2" AllowResizingColumns="True" EnableDataVirtualization = "True"  AutoGenerateColumns="False" ShowGroupDropArea="False" FontSize="11" AllowFiltering="True"   ItemsSource="{Binding DtTraslados}"  HeaderStyle="{StaticResource headerStyle}" Background="#FFF9F8F8">
+                        <SiaSf:SfDataGrid.Columns>
+                            <SiaSf:GridTemplateColumn HeaderText="..." MappingName="Detalle" Width="30"  AllowFiltering="False">
+                                <SiaSf:GridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="BtnDetalle" Content="..." Click="BTNdetalle_Click" Tag="1" Background="DodgerBlue" Cursor="Hand" BorderBrush="Black"/>
+                                    </DataTemplate>
+                                </SiaSf:GridTemplateColumn.CellTemplate>
+                            </SiaSf:GridTemplateColumn>
+                            <SiaSf:GridTextColumn  HeaderText="Codigo" MappingName="cod_ref" Width="100"/>
+                            <SiaSf:GridTextColumn  HeaderText="Referencia" MappingName="nom_ref" Width="150"/>
+                            <SiaSf:GridTextColumn HeaderText="Documento"  MappingName="num_trn" Width="120"/>
+                            <SiaSf:GridTextColumn  HeaderText="Cnt pedida" MappingName="can_pend" Width="120"/>
+                        </SiaSf:SfDataGrid.Columns>
+                    </SiaSf:SfDataGrid>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Compras" Foreground="DodgerBlue" Margin="5 0 0 0"/>
+
+                    <SiaSf:SfDataGrid Grid.Row="1"  x:Name="dataGridCompra" FrozenColumnCount="2" AllowResizingColumns="True" EnableDataVirtualization = "True"  AutoGenerateColumns="False" ShowGroupDropArea="False" FontSize="11" AllowFiltering="True"   ItemsSource="{Binding DtTraslados}"  HeaderStyle="{StaticResource headerStyle}" Background="#FFF9F8F8">
+                        <SiaSf:SfDataGrid.Columns>
+                            <SiaSf:GridTemplateColumn HeaderText="..." MappingName="Detalle" Width="30"  AllowFiltering="False">
+                                <SiaSf:GridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="BtnDetalle" Content="..." Click="BTNdetalle_Click" Tag="2" Background="DodgerBlue" Cursor="Hand" BorderBrush="Black"/>
+                                    </DataTemplate>
+                                </SiaSf:GridTemplateColumn.CellTemplate>
+                            </SiaSf:GridTemplateColumn>
+                            <SiaSf:GridTextColumn  HeaderText="Codigo" MappingName="cod_ref" Width="100"/>
+                            <SiaSf:GridTextColumn HeaderText="Documento Compra"  MappingName="num_trn" Width="150"/>
+                            <SiaSf:GridTextColumn HeaderText="Documento Cruce"  MappingName="doc_cruc" Width="150"/>
+                            <SiaSf:GridTextColumn  HeaderText="Cnt Compra" MappingName="can_compra" Width="120"/>
+                        </SiaSf:SfDataGrid.Columns>
+                    </SiaSf:SfDataGrid>
+                </Grid>
+
+             
+            </Grid>
+        </Border>
+
+
+    </Grid>
+</Window>

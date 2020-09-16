@@ -1,0 +1,13 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor.csproj.CopyComplete
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\DetallePedidosProvedor\obj\Debug\DetallePedidosProvedor.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\DetallePedidosProvedor.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\DetallePedidosProvedor.pdb

@@ -1,0 +1,174 @@
+﻿<Window x:Class="WindowPV.Consignacion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+        xmlns:local="clr-namespace:WindowPV"
+        mc:Ignorable="d"
+        Height="600" Width="1200"   WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" PreviewKeyDown="Window_PreviewKeyDown">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1"  Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Bodega : " VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10 0 2 0 "/>
+                <TextBox Name="BodCod" Grid.Column="1" Margin="5" PreviewKeyDown="Txt_PreviewKeyDown" Tag="inmae_bod"/>
+                <TextBox Name="BodNom" Grid.Column="2" Margin="5" BorderBrush="{x:Null}" Background="LightGray" IsReadOnly="True"/>
+
+                <Button Name="BTNconsultar" Grid.Column="3" Margin="5" BorderBrush="{x:Null}" Background="#3498db" Foreground="White" Cursor="Hand" Click="BTNconsultar_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Name="Border" BorderBrush="{x:Null}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                                <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="Button.IsFocused" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="Orange" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <TextBlock Text="Consultar" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                </Button>
+
+                <TextBlock Text="F9 Buscar refrencias" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 50 0" FontSize="14" FontWeight="Bold"/>
+
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1"  Margin="5">
+            <Grid>
+                <Grid Grid.Column="0">
+                    <Grid.Resources>
+                        <Style TargetType="SiaSf:FilterToggleButton">
+                            <Setter Property="Height" Value="15"/>
+                            <Setter Property="Width" Value="15" />
+                            <Setter Property="Foreground" Value="WhiteSmoke"/>
+                        </Style>
+                        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontSize" Value="11"/>
+                            <Setter Property="BorderBrush" Value="White"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="Gray"/>
+                        </Style>
+                    </Grid.Resources>
+
+
+                    <SiaSf:SfBusyIndicator  Name="sfBusyIndicator" Margin="5" VerticalAlignment="Center" FontSize="12" AnimationSpeed="100" AnimationType="Gear" Header="Cargando Datos - SiasoftApp" Height="100" IsBusy="False" Focusable="False"/>
+                    
+                    <SiaSf:SfDataGrid x:Name="dataGridTabla"  AllowResizingColumns="True"  EnableDataVirtualization="True" AutoGenerateColumns="False" AllowFiltering="True" Margin="10" HeaderStyle="{StaticResource headerStyle}" CurrentCellEndEdit="dataGridTabla_CurrentCellEndEdit" KeyDown="dataGridTabla_KeyDown" FontSize="10">
+                        <SiaSf:SfDataGrid.Columns>
+                            <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="cod_ref" Width="80" />
+                            <SiaSf:GridTextColumn HeaderText="Nombre" MappingName="nom_ref" Width="200" />
+                            <SiaSf:GridNumericColumn HeaderText="Saldo" MappingName="saldo_fin" Width="80" NumberDecimalDigits="2"/>
+                            <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_ref, StringFormat='{}{0:c}'}"  HeaderText="val_ref" TextAlignment="Right" Width="80"/>
+                            <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_uni, StringFormat='{}{0:c}'}"  HeaderText="val_uni" TextAlignment="Right" Width="80"/>
+                            <SiaSf:GridNumericColumn HeaderText="Cantidad" MappingName="cantidad" Width="80" NumberDecimalDigits="2" AllowEditing="True">
+                                <SiaSf:GridNumericColumn.CellStyle>
+                                    <Style TargetType="SiaSf:GridCell">
+                                        <Setter Property="Background" Value="#4CF1C40F" />
+                                        <Setter Property="BorderBrush" Value="#FFD3D3D3" />
+                                    </Style>
+                                </SiaSf:GridNumericColumn.CellStyle>
+                            </SiaSf:GridNumericColumn>
+                            <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_iva, StringFormat='{}{0:c}'}"  HeaderText="val_iva" TextAlignment="Right" Width="80"/>
+
+                            <SiaSf:GridNumericColumn HeaderText="por_des" MappingName="por_des" Width="80" NumberDecimalDigits="2"/>
+                            <SiaSf:GridNumericColumn HeaderText="por_iva" MappingName="por_iva" Width="80" NumberDecimalDigits="2"/>
+                            <SiaSf:GridTextColumn DisplayBinding="{Binding Path=subtotal, StringFormat='{}{0:c}'}"  HeaderText="subtotal" TextAlignment="Right" Width="80"/>
+                            <SiaSf:GridTextColumn DisplayBinding="{Binding Path=total, StringFormat='{}{0:c}'}"  HeaderText="total" TextAlignment="Right" Width="80"/>
+                            <SiaSf:GridTextColumn HeaderText="Linea" MappingName="nom_tip" Width="120" />
+                        </SiaSf:SfDataGrid.Columns>
+                    </SiaSf:SfDataGrid>
+                </Grid>
+
+                <Grid Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Border Grid.Row="0" Background="white" Height="Auto"  BorderBrush="Black" BorderThickness="1,1,1,1"  Margin="10" Visibility="Hidden">
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+
+                            <TextBlock Grid.ColumnSpan="2"  Text="F6 para abrir la ventana de busqueda" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5 0 2 0"/>
+                            
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Buscar: " VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                            <TextBox Name="Texto_Busc" Grid.Row="1" Grid.Column="1" Margin="0 10 10 10" Height="30"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+                            <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Button Name="BTNbuscar" Grid.Column="0"  Width="100" Height="30"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 5 0 " Content="Buscar" Background="#3498db" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand" Click="BTNbuscar_Click" />
+                                <Button Name="Limpiar" Grid.Column="1" Width="100" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0 " Content="Limpiar" Background="#3498db" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand" Click="Limpiar_Click"/>
+                            </Grid>
+                            
+                        </Grid>
+                    </Border>
+
+                   
+                   
+
+                </Grid>
+
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="2" Background="#373737">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Total de Registros : " Foreground="Orange" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold" Margin="10 0 2 0"/>
+            <TextBlock Name="Total" Grid.Column="1" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+            <TextBlock Text="Total Productos a facturar : " Grid.Column="2" Foreground="Orange" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold" Margin="10 0 2 0"/>
+            <TextBlock Name="TotalFacturar" Grid.Column="3" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+            <Grid Grid.Column="4">
+                <StackPanel Height="Auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="BTNfacturar" Height="40" Width="150" Margin="5" Content="Facturtar - F5" Click="BTNfacturar_Click" Background="#3498db" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand"/>
+                    <Button Name="BTNExportar" Height="40" Width="150" Margin="5" Content="Exportar" Click="BTNExportar_Click" Background="#3498db" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand"/>
+                    <Button Name="BTNSalir" Height="40" Width="150" Margin="5"  Content="Salir" Click="BTNSalir_Click" Background="#3498db" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>
+
+    

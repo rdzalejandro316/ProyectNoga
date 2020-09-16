@@ -1,0 +1,144 @@
+﻿<Window x:Class="SiasoftAppExt.NotificationProcess"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SiasoftAppExt"
+             xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+             Width="1000" Height="400" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <SolidColorBrush Color="DodgerBlue" x:Key="ColorMain"/>
+        <Style TargetType="Border" x:Key="card">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Direction="0" ShadowDepth="0.8" BlurRadius="5" Color="Black"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#373737"/>
+        </Style>
+        <Style TargetType="Button" x:Key="BtnStyle">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Margin" Value="5,2,5,2"/>
+            <Setter Property="Background" Value="{StaticResource ColorMain}"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*"/>
+            <ColumnDefinition Width="1.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Margin="10">
+            <Border Style="{StaticResource card}"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <StackPanel Name="Panel1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Visibility="Visible">
+
+                        <Button Name="BtnAdd" Click="Btnadd_Click" ToolTip="Nuevo" Style="{StaticResource BtnStyle}">
+                            <Image Source="imagenes\plus.png" Margin="3"/>
+                        </Button>
+
+                        <Button Name="BtnEdit" Click="BtnEdit_Click" ToolTip="Editar" Style="{StaticResource BtnStyle}">
+                            <Image Source="imagenes\create.png" Margin="3"/>
+                        </Button>
+
+                        <Button Name="BtnDelete" Click="BtnDelete_Click" ToolTip="Eliminar" Style="{StaticResource BtnStyle}">
+                            <Image Source="imagenes\bin2.png" Margin="3"/>
+                        </Button>
+
+                    </StackPanel>
+
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <SiaSf:SfDataGrid AllowResizingColumns="True" x:Name="GridProcess" EnableDataVirtualization = "True" AutoGenerateColumns="False" ShowGroupDropArea="False" FontSize="10" AllowFiltering="True" Tag="1"  RowSelectionBrush="#7F3498DB" HeaderStyle="{StaticResource headerStyle}" ColumnSizer="Star" SelectionChanged="GridProcess_SelectionChanged">
+                        <SiaSf:SfDataGrid.Columns>
+                            <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="codeprocess" Width="80"/>
+                            <SiaSf:GridTextColumn HeaderText="Proceso" MappingName="nameprocess"/>
+                        </SiaSf:SfDataGrid.Columns>
+                    </SiaSf:SfDataGrid>
+                    <StackPanel Grid.Row="1" Background="#373737" Orientation="Horizontal">
+                        <TextBlock Text="Total:" Foreground="White" VerticalAlignment="Center" FontWeight="Bold" Margin="5"/>
+                        <TextBlock Name="TxTotProcess" Text="..." Foreground="White" VerticalAlignment="Center" Margin="2"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="10">
+            <Border Style="{StaticResource card}"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <StackPanel Name="Panel2" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Visibility="Visible">
+
+                        <Button Name="BtnAdd2" Click="Btnadd_Click" ToolTip="Nuevo" Style="{StaticResource BtnStyle}">
+                            <Image Source="imagenes\plus.png" Margin="3"/>
+                        </Button>
+
+                        <Button Name="BtnEdit2" Click="BtnEdit_Click" ToolTip="Editar" Style="{StaticResource BtnStyle}">
+                            <Image Source="imagenes\create.png" Margin="3"/>
+                        </Button>
+
+                        <Button Name="BtnDelete2" Click="BtnDelete_Click" ToolTip="Eliminar" Style="{StaticResource BtnStyle}">
+                            <Image Source="imagenes\bin2.png" Margin="3"/>
+                        </Button>
+
+                    </StackPanel>
+
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <SiaSf:SfDataGrid AllowResizingColumns="True" x:Name="GridProcessEmail" EnableDataVirtualization = "True" AutoGenerateColumns="False" ShowGroupDropArea="False" FontSize="10" AllowFiltering="True" Tag="1"  RowSelectionBrush="#7F3498DB" HeaderStyle="{StaticResource headerStyle}" ColumnSizer="Star">
+                        <SiaSf:SfDataGrid.Columns>
+                            <SiaSf:GridTextColumn MappingName="codeprocess" IsHidden="True"/>
+                            <SiaSf:GridTextColumn HeaderText="Id" MappingName="userid" Width="50"/>
+                            <SiaSf:GridTextColumn HeaderText="Usuario" MappingName="username" Width="150"/>
+                            <SiaSf:GridTextColumn HeaderText="Email" MappingName="email"/>
+                            <SiaSf:GridCheckBoxColumn HeaderText="Estado" MappingName="stateprocess" Width="50"/>
+                        </SiaSf:SfDataGrid.Columns>
+                    </SiaSf:SfDataGrid>
+                    <StackPanel Grid.Row="1" Background="#373737" Orientation="Horizontal">
+                        <TextBlock Text="Total:" Foreground="White" VerticalAlignment="Center" FontWeight="Bold" Margin="5"/>
+                        <TextBlock Name="TxTotProcessEmail" Text="..." Foreground="White" VerticalAlignment="Center" Margin="2"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+
+
+</Window>

@@ -1,0 +1,55 @@
+﻿<Window x:Class="NotificationProcess.AddUserProcess"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotificationProcess"        
+        xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"    
+        Title="Processo" Height="400" Width="500" Loaded="Window_Loaded" syncfusionskin:SfSkinManager.VisualStyle="Metro">
+
+    <Window.Resources>
+        <SolidColorBrush Color="DodgerBlue" x:Key="ColorMain"/>
+        <Style TargetType="Border" x:Key="card">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Direction="0" ShadowDepth="0.8" BlurRadius="5" Color="Black"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="10">
+        <Border Style="{StaticResource card}"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Name="TxTitle" Text="title" Grid.ColumnSpan="2" Foreground="{StaticResource ColorMain}" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+
+            <TextBlock Grid.Row="1" Text="USUARIO :" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+            <ComboBox Name="CBuser"  x:FieldModifier="public" DisplayMemberPath="username" SelectedValuePath="userid" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Padding="7" Margin="5,0,15,0"/>
+
+            <TextBlock Grid.Row="2" Text="Processo :" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+            <TextBox Name="TxProcess" x:FieldModifier="public" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Padding="5" Margin="5,0,10,0" IsEnabled="False"/>
+
+            <TextBlock Grid.Row="3" Text="Estado :" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+            <CheckBox Name="CHestado" x:FieldModifier="public" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Margin="5"/>
+
+            <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Name="BtnGuardar" Content="Guardar" Margin="2" Padding="5"  Width="100" Background="{StaticResource ColorMain}" BorderBrush="{x:Null}" Foreground="White" Click="BtnGuardar_Click"/>
+                <Button Name="BtnCancelar" Content="Cancelar" Margin="2" Padding="5"  Width="100" Background="{StaticResource ColorMain}" BorderBrush="{x:Null}" Foreground="White" Click="BtnCancelar_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</Window>

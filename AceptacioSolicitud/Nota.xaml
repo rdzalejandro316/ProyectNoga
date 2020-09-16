@@ -1,0 +1,31 @@
+﻿<Window x:Class="AceptacioSolicitud.Nota"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AceptacioSolicitud"
+        mc:Ignorable="d"
+        Title="Nota" Height="200" Width="200">
+    
+    <Grid>
+        <Grid Margin="10">
+            <Border Background="White">
+                <Border.Effect>
+                    <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                </Border.Effect>
+            </Border>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <TextBox Name="tx_descripcion"  Padding="5" Margin="10" TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" />
+
+                <Button Name="BtnGenerarNota" Grid.Row="1" Background="#03A9F4" Content="Generar la Solicitud" Margin="5" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Click="BtnGenerarNota_Click"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+    
+</Window>

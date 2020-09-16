@@ -1,0 +1,15 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\DetalleCompra.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\DetalleCompra.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision.csproj.CopyComplete
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\CargarPedidoRemision\obj\Debug\CargarPedidoRemision.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\CargarPedidoRemision.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\CargarPedidoRemision.pdb

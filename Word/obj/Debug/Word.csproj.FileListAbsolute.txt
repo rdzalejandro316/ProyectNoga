@@ -1,0 +1,14 @@
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word.csprojAssemblyReference.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word.baml
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word.g.cs
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word_MarkupCompile.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word.g.resources
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word.Properties.Resources.resources
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word.csproj.GenerateResource.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word.csproj.CoreCompileInputs.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word.csproj.CopyComplete
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word.dll
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word.pdb
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\Word.dll
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\Word.pdb
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\Word\obj\Debug\Word_MarkupCompile.lref

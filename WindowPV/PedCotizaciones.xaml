@@ -1,0 +1,347 @@
+﻿<Window x:Class="WindowPV.PedCotizaciones"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+        xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+        xmlns:local="clr-namespace:WindowPV"
+        mc:Ignorable="d"
+        Height="650" Width="1200"  WindowStartupLocation="CenterScreen"  Loaded="Window_Loaded" PreviewKeyDown="Window_PreviewKeyDown" syncfusionskin:SfSkinManager.VisualStyle="Metro" >
+
+    <Window.Resources>
+        <local:ColorConverter x:Key="converter"/>
+
+        <Style TargetType="SiaSf:FilterToggleButton">
+            <Setter Property="Height" Value="15"/>
+            <Setter Property="Width" Value="15" />
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#373737"/>
+        </Style>
+        <Style  x:Key="botones">
+            <Setter Property="Control.Width" Value="120"/>
+            <Setter Property="Control.Height" Value="35"/>
+            <Setter Property="Control.Margin" Value="5"/>
+            <Setter Property="Control.Background" Value="#2980b9"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Background" Value="#2980b9"/>
+                    <Setter Property="Control.Cursor" Value="Hand"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1"  Margin="5" syncfusionskin:SfSkinManager.VisualStyle="Metro" >
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Tipo de Consulta : " Grid.Column="0" Margin="10 0 2 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold"/>
+
+                <ComboBox  Grid.Column="1" x:Name="TextBxCB_consulta" Width="120" HorizontalAlignment="Left" Margin="5"  SelectionChanged="TextBxCB_consulta_SelectionChanged" syncfusionskin:SfSkinManager.VisualStyle="Metro" />
+
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button Name="BtnVerDoc" Width="150"  Content="Ver Docu despachado"  Margin="5,0,5,0" Style="{StaticResource botones}" Click="BtnVerDoc_Click"/>
+                    <Button Name="BtnNota" Width="150"  Content="Agregar Nota Pedido"  Margin="5,0,5,0" Style="{StaticResource botones}" Click="BtnNota_Click"/>
+                </StackPanel>
+                
+                
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1"  Margin="5">
+            <Grid>
+                <Grid.Resources>
+                    <Style  x:Key="gridStyle" TargetType="SiaSf:GridCell">
+                        <Setter Property="BorderBrush" Value="LightGray" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=facturado}" Value="SI">
+                                <Setter Property="Background" Value="#4C008000"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <SiaSf:SfBusyIndicator  Name="sfBusyIndicator" Margin="5" VerticalAlignment="Center" FontSize="12" AnimationSpeed="100" AnimationType="Gear" Header="Cargando Datos - SiasoftApp" Height="100" IsBusy="False" Focusable="False" Panel.ZIndex="2"/>
+
+                <SiaSf:SfDataGrid x:Name="dataGridCabeza"  AllowResizingColumns="True"  CellStyle="{StaticResource gridStyle}" SelectionUnit="Row" SelectionMode="Single" NavigationMode="Cell"  EnableDataVirtualization="True" AutoGenerateColumns="False" AllowFiltering="True"   HeaderStyle="{StaticResource headerStyle}"  Margin="5" Width="800" HorizontalAlignment="Left" FontSize="11" SelectionChanged="dataGridCabeza_SelectionChanged">
+                    <SiaSf:SfDataGrid.Columns>
+                        <SiaSf:GridTemplateColumn MappingName="Agregar" Width="60"  AllowFiltering="False">
+                            <SiaSf:GridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="BtnAdd" Click="BTNaddRef_Click" Background="DodgerBlue" Cursor="Hand" BorderBrush="Black">
+                                        <Image Source="imagenes/tick-outline.png"/>
+                                    </Button>
+                                </DataTemplate>
+                            </SiaSf:GridTemplateColumn.CellTemplate>
+                        </SiaSf:GridTemplateColumn>
+                        <SiaSf:GridTextColumn HeaderText="iii" MappingName="idreg" Width="150" IsHidden="True"/>
+                        <SiaSf:GridTextColumn HeaderText="Estado" MappingName="facturado" Width="50"/>
+                        <SiaSf:GridTextColumn HeaderText="Documento" MappingName="num_trn" Width="100"/>
+                        <SiaSf:GridTextColumn HeaderText="Bod" MappingName="bod_tra" Width="60" IsHidden="True"/>
+                        <SiaSf:GridTextColumn HeaderText="Fecha" MappingName="fec_trn" Width="120"/>
+                        <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="cod_cli" Width="120" IsHidden="True"/>
+                        <SiaSf:GridTextColumn HeaderText="Cliente" MappingName="nom_ter" Width="250"/>
+                        <SiaSf:GridTextColumn HeaderText="Ciudad" MappingName="nom_ciu" Width="120"/>
+                        <SiaSf:GridTextColumn HeaderText="Cod Ven" MappingName="cod_ven" Width="80"/>
+                        <SiaSf:GridTextColumn HeaderText="Nombre Ven" MappingName="nom_mer" Width="120"/>
+                        <SiaSf:GridTextColumn MappingName="des_mov" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="des_mov" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="observ" IsHidden="True"/>
+                    </SiaSf:SfDataGrid.Columns>
+                </SiaSf:SfDataGrid>
+               
+                <!--<Grid Grid.Column="1" Width="200" Height="200" HorizontalAlignment="Right">
+                    <TextBox Name="Texto_Busc" Width="100" Height="40" />
+                    <Button Name="BTNbuscar" Width="200" Height="30" VerticalAlignment="Bottom" Content="BUscar" Click="BTNbuscar_Click"/>
+                </Grid>-->
+
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="1.2*"/>
+                    <RowDefinition Height="0.8*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1"  Margin="5">
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Pedidos Procesado - Pendientes" TextAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="#2980b9" FontSize="16"/>
+                        <Grid Grid.Row="1" Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock Text="Documento Compra : " VerticalAlignment="Center" FontWeight="Bold"/>
+                                    <TextBlock Name="DocumentoCompra" Text="Ninguno" VerticalAlignment="Center"/>
+                                    <TextBlock Name="idregCompra" Visibility="Hidden"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Button Name="BTNdetalle" Content="Detalle" Grid.Row="1"  Style="{StaticResource botones}" Height="25" Visibility="Hidden" Click="BTNdetalle_Click"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <Grid Margin="5" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Background="#373737" Margin="0,0,0,0" HorizontalAlignment="Left">
+                        <TextBlock Text="Nota del Documento" Margin="30,5,30,5" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Bold"/>
+                    </Border>
+
+                    <Border Grid.Row="1"  Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1">
+                        <Grid >
+                            <TextBox IsEnabled="True" Name="Nota" TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Focusable="False" Foreground="Red" FontSize="18" FontWeight="Bold"/>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+
+                <Grid Margin="5" Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Background="#373737" Margin="0,0,0,0" HorizontalAlignment="Left">
+                        <TextBlock Text="Nota del Pedido" Margin="30,5,30,5" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Bold"/>
+                    </Border>
+
+                    <Border Grid.Row="1"  Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1">
+                        <Grid >
+                            <TextBox IsEnabled="True" Name="NotaPedi" TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Focusable="False" Foreground="Red" FontSize="18" FontWeight="Bold"/>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+
+                <Grid Grid.Row="1" VerticalAlignment="Center" Margin="10 0 10 0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <!--<Button Name="BTNfacturar" Content="Facturar Cotizacion" Click="BTNfacturar_Click" Style="{StaticResource botones}"/>
+                            -->
+                        <!--<Button Name="BTNaddRef" Content="Agregar Rerencia" Click="BTNaddRef_Click" Style="{StaticResource botones}"/>-->
+                        <!--
+                            <Button Name="Salir" Content="Salir" Click="Salir_Click" Style="{StaticResource botones}" Margin="5,5,5,0" VerticalAlignment="Top"/>-->
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Grid>
+        
+        
+        <Border Grid.Row="2" Background="white" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1"  Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <SiaSf:SfDataGrid x:Name="dataGridCuerpo"  AllowResizingColumns="True"  FontSize="11" EnableDataVirtualization="True" AutoGenerateColumns="False" AllowFiltering="True"  HeaderStyle="{StaticResource headerStyle}" Margin="-5,11,15,-1" SelectionChanged="dataGridCuerpo_SelectionChanged" CurrentCellEndEdit="dataGridCuerpo_CurrentCellEndEdit" >
+                    <SiaSf:SfDataGrid.Columns>
+                        <SiaSf:GridTemplateColumn MappingName="Eliminar" Width="60"  AllowFiltering="False">
+                            <SiaSf:GridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="BtnEliminar" Click="BtnEliminar_Click" Background="Red" Cursor="Hand" BorderBrush="Black">
+                                        <Image Source="imagenes/trash-o.png"/>
+                                    </Button>
+                                </DataTemplate>
+                            </SiaSf:GridTemplateColumn.CellTemplate>
+                        </SiaSf:GridTemplateColumn>
+
+                        <SiaSf:GridTextColumn HeaderText="iii" MappingName="idreg" Width="150" IsHidden="True"/>
+                        <SiaSf:GridTextColumn HeaderText="iiiCAB" MappingName="idregcab" Width="150" IsHidden="True"/>
+                        <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="cod_ref" Width="120"/>
+                        <SiaSf:GridTextColumn HeaderText="Referencia" MappingName="nom_ref" Width="120"/>
+                        <SiaSf:GridTextColumn HeaderText="Nombre Producto" MappingName="nom_ref" Width="290" IsHidden="True"/>
+                        <SiaSf:GridNumericColumn HeaderText="Cantidad" MappingName="cantidad" Width="100" NumberDecimalDigits="2" AllowEditing="True" x:Name="ColumnEdiCant">
+                            <SiaSf:GridNumericColumn.CellStyle>
+                                <Style TargetType="SiaSf:GridCell">
+                                    <Setter Property="Background" Value="#4CF1C40F" />
+                                    <Setter Property="BorderBrush" Value="#FFD3D3D3" />
+                                </Style>
+                            </SiaSf:GridNumericColumn.CellStyle>
+                        </SiaSf:GridNumericColumn>
+                        <SiaSf:GridNumericColumn HeaderText="Cantidad Pend" MappingName="cant_pend" Width="100" NumberDecimalDigits="2" AllowEditing="False"/>
+                        <SiaSf:GridCurrencyColumn DisplayBinding="{Binding Path=val_uni, StringFormat='{}{0:c}'}"  HeaderText="Valor Unit" TextAlignment="Right" Width="130"/>
+                        <SiaSf:GridCurrencyColumn DisplayBinding="{Binding Path=subtotal, StringFormat='{}{0:c}'}"  HeaderText="Subtotal" TextAlignment="Right" Width="130"/>
+                        <SiaSf:GridTextColumn HeaderText="% Desc" TextAlignment="Right" Width="88" MappingName="por_des" IsHidden="True"/>
+                        <SiaSf:GridCurrencyColumn DisplayBinding="{Binding Path=tot_tot, StringFormat='{}{0:c}'}"  HeaderText="Total" TextAlignment="Right" Width="150"/>
+                        <SiaSf:GridTextColumn MappingName="val_ref" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="por_iva" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="val_iva" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="por_ret" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="val_ret" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="por_ica" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="val_ica" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="por_riva" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="val_riva" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="val_des" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="saldo" IsHidden="True"/>
+                    </SiaSf:SfDataGrid.Columns>
+                </SiaSf:SfDataGrid>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="3" Grid.ColumnSpan="2" Height="Auto"  BorderBrush="Silver" BorderThickness="1,1,1,1"  Margin="5">
+            <Grid Margin="5">
+                <Grid.Resources>
+                    <Style x:Key="Title">
+                        <Setter Property="Control.Background" Value="{x:Null}"/>
+                        <Setter Property="Control.BorderBrush" Value="{x:Null}"/>
+                        <Setter Property="Control.Foreground" Value="Black"/>
+                        <Setter Property="Control.FontSize" Value="12"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Control.VerticalAlignment" Value="Bottom"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                    </Style>
+                    <Style x:Key="Texbox">
+                        <Setter Property="Control.Foreground" Value="#3498db"/>
+                        <Setter Property="Control.Margin" Value="0"/>
+                        <Setter Property="Control.FontSize" Value="12"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!--<Grid Background="#373737">-->
+                <Grid Background="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Total de Pedidos/Cotizacion" Style="{StaticResource Title}"/>
+                    <TextBlock  Name="Tot_regis" Grid.Column="0" Grid.Row="1" Style="{StaticResource Texbox}"/>
+
+                    <TextBlock Grid.Column="1" Grid.Row="0" Text="Suma Cantidades" Style="{StaticResource Title}"/>
+                    <TextBlock  Name="Tot_Cantid" Grid.Column="1" Grid.Row="1" Style="{StaticResource Texbox}"/>
+
+                    <TextBlock Grid.Column="2" Grid.Row="0" Text="Suma Total Pedido" Style="{StaticResource Title}"/>
+                    <TextBlock  Name="Tot_Total" Grid.Column="2" Grid.Row="1" Style="{StaticResource Texbox}"/>
+
+                    <TextBlock Name="Tx_titleSal" Grid.Column="3" Grid.Row="0" Text="Saldo" Style="{StaticResource Title}"/>
+                    <TextBlock  Name="Tot_saldo" Grid.Column="3" Grid.Row="1" Style="{StaticResource Texbox}"/>
+
+                    <TextBlock Name="Tx_RegCu" Grid.Column="4" Grid.Row="0" Text="Reg Cuerpo" Style="{StaticResource Title}"/>
+                    <TextBlock  Name="Tot_RegCu" Grid.Column="4" Grid.Row="1" Style="{StaticResource Texbox}"/>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="BTNfacturar" Content="F5 - FACTURAR" Click="BTNfacturar_Click" Style="{StaticResource botones}" />
+                        <Button Name="BTNImprimir" Content="Imprimir" Click="BTNImprimir_Click" Style="{StaticResource botones}" />
+                        <Button Name="BTNsalir" Content="ALT + F4 - SALIR" Click="BTNsalir_Click" Style="{StaticResource botones}" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+
+
+
+    </Grid>
+    
+</Window>
+
+    

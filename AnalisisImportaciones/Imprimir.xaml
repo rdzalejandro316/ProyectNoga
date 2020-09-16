@@ -1,0 +1,69 @@
+﻿<Window x:Class="AnalisisImportaciones.Imprimir"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnalisisImportaciones"
+        xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d"
+        Title="Imprimir" Height="500" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner">
+
+    <SiaSf:TabControlExt Name="TabControl1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  SiaSf:SkinStorage.VisualStyle="Metro"  IsDisableUnloadTabItemExtContent="False" EnableLabelEdit="False">
+        <SiaSf:TabItemExt Name="tabItemExt1"  Header="Configuracion" Width="Auto" HeaderMargin="10 0 10 0 " FontSize="12" >
+            <Grid>
+                <StackPanel Margin="0 40 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Text="Importacion : " FontWeight="Bold" Foreground="#03A9F4"/>
+                    <TextBlock Name="Tx_Impor" />
+                </StackPanel>
+                
+                <Grid Width="300" Height="160">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="0.3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1.2*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Reporte Documentos Contables : " VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                    <TextBlock Text="Reporte Documento Importacion : " Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                    <TextBlock Text="Reporte Precios Venta : " Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+
+                    <Grid Name="GridCheck" Grid.Row="0" Grid.RowSpan="4" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <CheckBox Tag="1" Grid.Column="1" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        <CheckBox Tag="2" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        <CheckBox Tag="3" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                    </Grid>
+
+                    <StackPanel Grid.ColumnSpan="2" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="Imprimir" Background="#03A9F4" Foreground="White" BorderBrush="{x:Null}" Width="150" Margin="5" Cursor="Hand" Click="Button_Click"/>
+                    </StackPanel>
+
+                </Grid>
+
+                <StackPanel Margin="0 00 0 50" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Text="Gasto de Importacion : " FontWeight="Bold" Foreground="#03A9F4"/>
+                    <TextBlock Name="Tx_facImpo" />
+                </StackPanel>
+            </Grid>
+        </SiaSf:TabItemExt>
+        
+        <SiaSf:TabItemExt Name="tabItemExt2" Header="Consulta" Width="Auto" HeaderMargin="10 0 10 0 " FontSize="12">
+            <Grid>
+                <SiaSf:TabControlExt Grid.Row="0"  Name="TabControl2" Margin="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  SiaSf:SkinStorage.VisualStyle="Metro"  TabItemSelectedBackground="#373737"  IsDisableUnloadTabItemExtContent="False" EnableLabelEdit="False" CloseButtonType="Individual"/>
+            </Grid>
+        </SiaSf:TabItemExt>
+
+    </SiaSf:TabControlExt>
+
+</Window>

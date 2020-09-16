@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PvReimprimeFacturaNC", "PvReimprimeFacturaNC.csproj", "{8CBEA96C-84D2-4A52-A4F2-56E9C67E8AC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalisisImportaciones", "..\AnalisisImportaciones\AnalisisImportaciones.csproj", "{35CC2CDA-6126-4C14-98C7-1552858D62F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CBEA96C-84D2-4A52-A4F2-56E9C67E8AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CBEA96C-84D2-4A52-A4F2-56E9C67E8AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CBEA96C-84D2-4A52-A4F2-56E9C67E8AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CBEA96C-84D2-4A52-A4F2-56E9C67E8AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35CC2CDA-6126-4C14-98C7-1552858D62F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CC2CDA-6126-4C14-98C7-1552858D62F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CC2CDA-6126-4C14-98C7-1552858D62F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CC2CDA-6126-4C14-98C7-1552858D62F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB109ED2-9E4D-4A59-903F-DFCABF9E3268}
+	EndGlobalSection
+EndGlobal

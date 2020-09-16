@@ -1,0 +1,127 @@
+﻿<Window x:Class="SiasoftAppExt.PvReimprimeFacturaNC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SiasoftAppExt"
+              xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" Width="1100" Height="660" d:DesignWidth="1100" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="Background" Value="#373737"/>
+        </Style>
+
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style TargetType="SiaSf:GridCell">
+            <Setter Property="BorderBrush" Value="LightGray" />
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0"  Background="WhiteSmoke">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Fecha:  "  Grid.Row="0" Grid.Column="0" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="13"/>
+                <DatePicker x:Name="FechaIni" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" ></DatePicker>
+                <DatePicker x:Name="FechaFin" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" ></DatePicker>
+                <TextBlock Text="Tipo Doc:"  Grid.Row="0" Grid.Column="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="13"/>
+                <ComboBox  x:Name="CmbTipoDoc" Margin="2,5,2,5" Grid.Row="0"  Grid.Column="4"  SelectedItem="{Binding SelectedItem}" IsSynchronizedWithCurrentItem="True" SelectionChanged="CmbTipoDoc_SelectionChanged" >
+                    <ComboBoxItem IsSelected="True" Content="Factura POS"/>
+                    <ComboBoxItem Content="Factura Credito"/>
+                    <ComboBoxItem Content="Nota Credito Total"/>
+                    <ComboBoxItem Content="Nota Credito Devolucion"/>
+                    <ComboBoxItem Content="Cotizacion"/>
+                    <ComboBoxItem Content="Pedidos"/>
+                </ComboBox>
+                <TextBlock Text="# Doc:"  Grid.Row="0" Grid.Column="5" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="13"/>
+                <TextBox Grid.Row="0" x:Name="TxtNumDoc" Height="25" Grid.Column="6" VerticalAlignment="Center" VerticalContentAlignment="Center" MaxLength="12" Foreground="Red" FontWeight="Bold" />
+                <Button x:Name="Ejecutar" Content="Ejecutar" Grid.Column="7" Margin="5,5,5,0" Background="DodgerBlue" Click="Ejecutar_Click" Foreground="White" Height="30" VerticalAlignment="Top" BorderBrush="{x:Null}" Cursor="Hand"/>
+                <Button IsEnabled="False" x:Name="ReImprimir" Content="Re-Imprimir" Grid.Column="8" Margin="5,5,5,5" Background="DodgerBlue" Click="ReImprimir_Click" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand"/>
+                <CheckBox x:Name="GeneraPdfFile" Content="Generar PDF" Grid.Column="9" Margin="5,5,5,5"  VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <SiaSf:SfBusyIndicator Name="sfBusyIndicator" Margin="5" VerticalAlignment="Center" FontSize="12" AnimationSpeed="100"  AnimationType="Rainy" Header="Cargando Datos - SiasoftApp" Height="200" IsBusy="False" />
+                <SiaSf:SfDataGrid  x:Name="dataGridSF"  Margin="2,2,2,2" EnableDataVirtualization = "True" AutoGenerateColumns="False" ShowGroupDropArea="True" FontSize="11" AllowFiltering="True" Foreground="Black" AllowResizingColumns="True" HeaderStyle="{StaticResource headerStyle}" PreviewKeyDown="dataGridSF_PreviewKeyDown" FrozenColumnCount="3">
+                    <SiaSf:SfDataGrid.Columns>
+                        <SiaSf:GridTextColumn HeaderText="IdRegCab" MappingName="idreg" Width="60"/>
+                        <SiaSf:GridTextColumn HeaderText="Tipo" MappingName="cod_trn" Width="40"/>
+                        <SiaSf:GridTextColumn HeaderText="Documento" MappingName="num_trn" Width="90"/>
+                        <SiaSf:GridDateTimeColumn  CustomPattern="dd/MM/yyyy HH:mm:ss.fff" 
+                                        HeaderText="Fecha Documento"
+                                        MappingName="fec_trn"
+                                        Pattern="CustomPattern" Width="140"/>
+
+                        <SiaSf:GridCheckBoxColumn Width="85" HeaderText="Imprimir" MappingName="imprimir" />
+                        <SiaSf:GridTextColumn HeaderText="Nit/cc" MappingName="cod_cli" Width="100"/>
+                        <SiaSf:GridTextColumn HeaderText="Nombre Cliente" MappingName="nom_cli" Width="300" />
+                        <SiaSf:GridTextColumn HeaderText="Bodega" MappingName="cod_bod" Width="70" />
+                        <SiaSf:GridNumericColumn HeaderText="Cantidad" MappingName="cantidad" Width="70" />
+                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=tot_tot, StringFormat='{}{0:c}'}"  HeaderText="Total" TextAlignment="Right" Width="100"/>
+
+
+                        <SiaSf:GridTextColumn HeaderText="cod_ven" MappingName="cod_ven" Width="50" />
+                        <SiaSf:GridTextColumn HeaderText="vendedor" MappingName="nom_mer" Width="150" />
+
+                        <SiaSf:GridTextColumn HeaderText="TrnAnu" MappingName="trn_anu" Width="40" />
+                        <SiaSf:GridTextColumn HeaderText="NumAnu" MappingName="num_anu" Width="100" />
+                        <SiaSf:GridTextColumn HeaderText="Cufe" MappingName="fa_cufe" Width="120" />
+                        <SiaSf:GridTextColumn HeaderText="DocumentoElect" MappingName="fa_docelect" Width="100" />
+
+                        <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="fa_codigo" Width="50" />
+
+                        <SiaSf:GridDateTimeColumn  CustomPattern="dd/MM/yyyy HH:mm:ss.fff" 
+                        HeaderText="FechaRespuesta" MappingName="fa_fecharesp"                                        Pattern="CustomPattern" Width="140"/>
+
+                        <SiaSf:GridTextColumn HeaderText="Msg" MappingName="fa_msg" Width="220" />
+                    </SiaSf:SfDataGrid.Columns>
+                </SiaSf:SfDataGrid>
+            </Grid>
+            <Grid Grid.Row="2" Background="#373737">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Total Documentos : " Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" FontWeight="Bold"/>
+                <TextBlock  x:Name="TextTotalEntradas" Grid.Column="1" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White"/>
+
+                <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 5 0">
+                    <Button x:Name="BtnEstadoDian" Content="Estado Documento Dian" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Background="DodgerBlue" Padding="5" Margin="5" BorderBrush="{x:Null}" Click="BtnEstadoDian_Click"/>
+                    <Button x:Name="BtnDownloadxml" Content="DownLoad XML Dian" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Background="DodgerBlue" Padding="5" Margin="5" BorderBrush="{x:Null}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+
+
+</Window>

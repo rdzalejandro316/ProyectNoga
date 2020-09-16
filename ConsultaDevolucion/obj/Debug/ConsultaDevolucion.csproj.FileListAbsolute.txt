@@ -1,0 +1,4 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaDevolucion\obj\Debug\ConsultaDevolucion.csprojAssemblyReference.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaDevolucion\obj\Debug\ConsultaDevolucion.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaDevolucion\obj\Debug\ConsultaDevolucion_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaDevolucion\obj\Debug\ConsultaDevolucion_MarkupCompile.lref

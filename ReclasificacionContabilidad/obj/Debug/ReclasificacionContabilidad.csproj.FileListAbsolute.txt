@@ -1,0 +1,14 @@
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad.csprojAssemblyReference.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad.g.cs
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad_MarkupCompile.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad_MarkupCompile.lref
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad.baml
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad.g.resources
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad.Properties.Resources.resources
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad.csproj.GenerateResource.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad.csproj.CoreCompileInputs.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad.csproj.CopyComplete
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad.dll
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ReclasificacionContabilidad\obj\Debug\ReclasificacionContabilidad.pdb
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\ReclasificacionContabilidad.dll
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\ReclasificacionContabilidad.pdb

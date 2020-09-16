@@ -1,0 +1,14 @@
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados.csprojAssemblyReference.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados.g.cs
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados_MarkupCompile.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados_MarkupCompile.lref
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados.baml
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados.g.resources
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados.Properties.Resources.resources
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados.csproj.GenerateResource.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados.csproj.CoreCompileInputs.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados.dll
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados.pdb
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\DocumentosRemachados.dll
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\DocumentosRemachados.pdb
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\DocumentosRemaqchados\obj\Debug\DocumentosRemachados.csproj.CopyComplete

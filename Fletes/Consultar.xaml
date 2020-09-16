@@ -1,0 +1,65 @@
+﻿<Window x:Class="Fletes.Consultar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fletes"
+        mc:Ignorable="d"
+        Title="Consultar" Height="250" Width="300">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Background="#373737">
+            <TextBlock Text="Tipo de Consulta" Foreground="White" VerticalAlignment="Center" Margin="5 0 0 0 " FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Tipo : " VerticalAlignment="Center" Margin="5 0 0 0" FontWeight="Bold" HorizontalAlignment="Right"/>
+            <ComboBox  Width="140" Name="Cbx_envioClas" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,4" Grid.Column="1" SelectionChanged="Cbx_envioClas_SelectionChanged">
+                <ComboBoxItem Tag="M" Content="Mercancia"/>
+                <ComboBoxItem Tag="D" Content="Guia"/>
+            </ComboBox>
+
+            <Grid Name="GridMercancia" Grid.Row="1" Grid.ColumnSpan="2" Visibility="Hidden">
+                <Grid.ColumnDefinitions> 
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="1" Text="Documento : "  VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Right"/>
+                <TextBox Name="Tx_documento" Width="150" Margin="5" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="3"/>
+            </Grid>
+
+            <Grid Name="GridDocumentos" Grid.Row="1" Grid.ColumnSpan="2" Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="1" Text="Guia : "  VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Right"/>
+                <TextBox Name="Tx_guiat" Width="150" Margin="5" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="3"/>
+            </Grid>
+
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Name="BtnConsutar" Content="Consultar" Width="100" Padding="5" Margin="5" Background="#2980b9" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Click="BtnConsutar_Click"/>
+                <Button Name="BtnSalir" Content="Salir" Width="100" Padding="5" Margin="5" Background="#2980b9" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Click="BtnSalir_Click"/>
+            </StackPanel>
+            
+        </Grid>
+
+    </Grid>
+
+</Window>

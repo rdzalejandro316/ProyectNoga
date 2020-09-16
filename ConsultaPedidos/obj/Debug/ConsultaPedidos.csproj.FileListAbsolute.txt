@@ -1,0 +1,85 @@
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.cache
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.cs
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.lref
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.baml
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.resources
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.Properties.Resources.resources
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.GenerateResource.Cache
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.dll
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.pdb
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\ConsultaPedidos.dll
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\ConsultaPedidos.pdb
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.csprojResolveAssemblyReference.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.csprojAssemblyReference.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.cs
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.lref
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.baml
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.resources
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.Properties.Resources.resources
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.GenerateResource.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.CoreCompileInputs.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.CopyComplete
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.dll
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.pdb
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\ConsultaPedidos.dll
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\ConsultaPedidos.pdb
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csprojAssemblyReference.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.cs
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.lref
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.baml
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.resources
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.Properties.Resources.resources
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.GenerateResource.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.CoreCompileInputs.cache
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.CopyComplete
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.dll
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.pdb
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\ConsultaPedidos.dll
+C:\Users\alejandro\Desktop\Grupo_Saavedra\SiasoftGS-Alejandro\Library\ConsultaPedidos.pdb
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csprojAssemblyReference.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.cs
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.lref
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.baml
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.resources
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.Properties.Resources.resources
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.GenerateResource.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.CoreCompileInputs.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.CopyComplete
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.dll
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.pdb
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\ConsultaPedidos.dll
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\Library\ConsultaPedidos.pdb
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.cs
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.cache
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.lref
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.baml
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.resources
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.Properties.Resources.resources
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.CopyComplete
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.dll
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ConsultaPedidos\obj\Debug\ConsultaPedidos.pdb
+C:\Users\USER\Desktop\SiasoftGS\Library\ConsultaPedidos.dll
+C:\Users\USER\Desktop\SiasoftGS\Library\ConsultaPedidos.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\DetalleBackorder.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\DetallePedidoVenta.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\DetalleBackorder.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\DetallePedidoVenta.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.csproj.CopyComplete
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ConsultaPedidos\obj\Debug\ConsultaPedidos.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\ConsultaPedidos.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\ConsultaPedidos.pdb

@@ -1,0 +1,13 @@
+﻿<Window x:Class="SiasoftAppExt.ImpresionFactura_Cart_Ped_Rec"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SiasoftAppExt"
+             xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+             Width="800" Height="400" Loaded="Window_Loaded">
+
+    <Grid>
+        <SiaSf:TabControlExt Name="TabControlPricipal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  SiaSf:SkinStorage.VisualStyle="Metro"  IsDisableUnloadTabItemExtContent="True" EnableLabelEdit="False"/>
+    </Grid>
+</Window>

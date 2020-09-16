@@ -1,0 +1,14 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi.csprojAssemblyReference.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi.csproj.CopyComplete
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\AnulacioRecibosProvi\obj\Debug\AnulacioRecibosProvi.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\AnulacioRecibosProvi.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\AnulacioRecibosProvi.pdb

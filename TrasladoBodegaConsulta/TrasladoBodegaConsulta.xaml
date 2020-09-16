@@ -1,0 +1,118 @@
+﻿<Window x:Class="SiasoftAppExt.TrasladoBodegaConsulta"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+             xmlns:local="clr-namespace:SiasoftAppExt"                    
+             Width="1000" Height="450" Loaded="Window_Loaded">
+
+
+    <Window.Resources>
+        <Style TargetType="syncfusion:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="Background" Value="#373737"/>
+        </Style>
+        <Style TargetType="Button" x:Key="boton">
+            <Setter Property="Background" Value="#2980b9"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="Margin" Value="10 3 10 3"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Background" Value="DarkOrange"/>
+                    <Setter Property="Control.Cursor" Value="Hand"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"  Background="#373737">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="180"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Fecha:  "  Grid.Row="0" Grid.Column="0" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="13" FontWeight="Bold"/>
+                <DatePicker x:Name="FechaIni" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" ></DatePicker>
+                <DatePicker x:Name="FechaFin" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" ></DatePicker>
+
+                <TextBlock Text="Tipo Trn:  "  Grid.Row="0" Grid.Column="3" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="13" FontWeight="Bold"/>
+                <ComboBox x:Name="CmbTipoCons" Margin="5" Grid.Column="4" IsSynchronizedWithCurrentItem="True" Cursor="Hand" FontSize="12" SelectionChanged="CmbTipoCons_SelectionChanged">
+                    <ComboBoxItem Content="Salida Traslado de Bodega"/>
+                    <ComboBoxItem Content="Salida Traslado Bodega Consignacion/Remision"/>
+                    <ComboBoxItem Content="Devolucion traslado consignacion"/>
+                </ComboBox>
+
+                <Button x:Name="Ejecutar" Content="Ejecutar" Grid.Column="5" Click="Ejecutar_Click" Style="{StaticResource boton}"/>
+                <Button x:Name="ExportaXLS" Content="Exportar XLS" Grid.Column="6" Click="ExportaXLS_Click" Style="{StaticResource boton}"/>
+                <Button x:Name="ReImprimir" Content="Re-Imprimir" Grid.Column="7" Click="ReImprimir_Click" Style="{StaticResource boton}"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <syncfusion:SfDataGrid  x:Name="dataGridSF"  
+                        EnableDataVirtualization = "True"
+                        AutoGenerateColumns="False" ShowGroupDropArea="True" FontSize="10" AllowFiltering="True"
+                        HeaderStyle="{StaticResource headerStyle}"
+                        ItemsSource="{Binding DtTraslados}">
+                    <syncfusion:SfDataGrid.Columns>
+                        <syncfusion:GridTextColumn MappingName="idreg" IsHidden="True"/>
+                        <syncfusion:GridTextColumn HeaderText="Tipo" MappingName="cod_trn" Width="40"/>
+                        <syncfusion:GridTextColumn HeaderText="Documento" MappingName="num_trn" Width="100"/>
+                        <syncfusion:GridTextColumn HeaderText="Fecha" MappingName="fec_trn" Width="120"/>
+                        <syncfusion:GridTextColumn HeaderText="BodDes" MappingName="cod_boddes" Width="70"/>
+                        <syncfusion:GridTextColumn HeaderText="Bodega Destino" MappingName="bodegades" Width="120"/>
+                        <syncfusion:GridTextColumn HeaderText="BodOrg" MappingName="cod_bodorg" Width="70"/>
+                        <syncfusion:GridTextColumn HeaderText="Bodega Origen" MappingName="bodegaorigen" Width="120"/>
+                        <syncfusion:GridTextColumn HeaderText="Referencia" MappingName="cod_ref" Width="100"/>
+                        <syncfusion:GridTextColumn HeaderText="Nombre Producto" MappingName="nom_ref" Width="250"/>
+                        <syncfusion:GridNumericColumn HeaderText="Cantidad" MappingName="cantidad" Width="80"/>
+                        <syncfusion:GridTextColumn x:Name="COLMval_uni" DisplayBinding="{Binding Path=val_uni, StringFormat='{}{0:c}'}"  HeaderText="Valor Unit" TextAlignment="Right" Width="100" />
+                        <syncfusion:GridTextColumn x:Name="COLMsubtotal" DisplayBinding="{Binding Path=subtotal, StringFormat='{}{0:c}'}"  HeaderText="Subtotal" TextAlignment="Right" Width="100"/>
+                        <syncfusion:GridNumericColumn x:Name="COLMpor_des" MappingName="por_des" HeaderText="% Desc" TextAlignment="Right" Width="80" NumberDecimalDigits="2"/>
+                        <syncfusion:GridTextColumn x:Name="COLMtot_tot" DisplayBinding="{Binding Path=tot_tot, StringFormat='{}{0:c}'}"  HeaderText="Total" TextAlignment="Right" Width="100"/>
+
+                    </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </Grid>
+            <Grid Grid.Row="2" Background="#373737">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Total Registros : " HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Column="0" Foreground="White" VerticalAlignment="Center" FontWeight="Bold"/>
+                <TextBlock  x:Name="TX_Total" Text="0" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Grid.Column="1"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+    
+</Window>

@@ -1,0 +1,14 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc.csprojAssemblyReference.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc.csproj.CopyComplete
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ExportarCuerpoDoc\obj\Debug\ExportarCuerpoDoc.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\ExportarCuerpoDoc.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\ExportarCuerpoDoc.pdb

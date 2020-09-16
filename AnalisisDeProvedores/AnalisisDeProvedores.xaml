@@ -1,0 +1,831 @@
+﻿<UserControl x:Class="SiasoftAppExt.AnalisisDeProvedores"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SiasoftAppExt"
+             xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1300" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SiaSf:SkinStorage.VisualStyle="Metro">
+
+    <UserControl.Resources>
+        <Style TargetType="Grid" x:Key="grid">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="Height" Value="Auto"/>
+        </Style>
+        <Style TargetType="Border" x:Key="card">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Direction="0" ShadowDepth="0.8" BlurRadius="5" Color="Black"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="botones">
+            <Setter Property="Background" Value="#F44336"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="5 0 5 0"/>
+            <Setter Property="Width" Value="140"/>
+            <Setter Property="Height" Value="30"/>
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Background" Value="#F44336"/>
+                    <Setter Property="Control.Cursor" Value="Hand"/>
+                </Trigger>
+                <Trigger Property="Control.IsFocused" Value="True">
+                    <Setter Property="Control.Background" Value="DarkOrange"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#F44336" />
+                    <Setter Property="Foreground" Value="White"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#373737"/>
+        </Style>
+
+    </UserControl.Resources>
+
+    <SiaSf:TabControlExt Name="TabControl1" Margin="0,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"   IsDisableUnloadTabItemExtContent="True"  EnableLabelEdit="False" TabItemSelectedBackground="#373737" CloseButtonType="Hide">
+        <SiaSf:TabItemExt Name="tabItemExt1"  Header="Configuracion" FontSize="15" >
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid  x:Name="GridConfiguracion" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource grid}">
+                    <Border Style="{StaticResource card}"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="3" Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Fecha Inicial" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="10"/>
+                            <TextBlock Grid.Column="1" Text="Fecha final" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="10"/>
+                        </Grid>
+
+
+                        <TextBlock Grid.Column="2" Grid.Row="3" FontSize="12" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="right" FontWeight="Bold">Fecha:</TextBlock>
+                        <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Horizontal">
+                            <DatePicker Name="FecIni"   HorizontalAlignment="Left" Text="{Binding CabSource.FechaIni}" VerticalAlignment="Center" Width="100" Height="28" Grid.Column="3" Grid.Row="2" Margin="5,0,0,0"  FontSize="11"/>
+                            <DatePicker Name="FecFin"   HorizontalAlignment="Left" Text="{Binding CabSource.FechaIni}" VerticalAlignment="Center" Width="100" Height="28" Grid.Column="3" Grid.Row="2" Margin="5,0,0,0"  FontSize="11"/>
+                        </StackPanel>
+
+
+                        <TextBlock  Grid.Column="2" Grid.Row="4" Foreground="Black"  FontSize="12" VerticalAlignment="Center" HorizontalAlignment="right" FontWeight="Bold">Empresa:</TextBlock>
+                        <SiaSf:ComboBoxAdv FontSize="12" x:Name="comboBoxEmpresas" Margin="5" AllowMultiSelect="True" Grid.ColumnSpan="2" Grid.Column="3" Grid.Row="4" Width="180" HorizontalAlignment="Left" DefaultText="Seleccione la empresa" DisplayMemberPath="businessname"  SelectedValuePath="businesscode"  SelectedValueDelimiter=","/>
+
+                        <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Grid.Column="2" Grid.Row="7" Name="BtnEjecutar" Command="{Binding RegisterCommand}" CommandParameter="{Binding ElementName=BtnEjecutar}" Click="BtnEjecutar_Click" Style="{StaticResource botones}" Content="Consultar"/>
+                                <Button Grid.Column="3" Grid.Row="7" Foreground="WhiteSmoke" Name="BtnSalir" Click="BtnSalir_Click" Style="{StaticResource botones}" Content="Salir"/>
+                            </StackPanel>
+                        </Grid>
+
+
+
+                    </Grid>
+
+                </Grid>
+                <Grid Grid.Row="1" >
+                </Grid>
+
+                <SiaSf:SfBusyIndicator  Focusable="False" Name="sfBusyIndicator" Margin="5" VerticalAlignment="Bottom" FontSize="12" AnimationSpeed="100" AnimationType="Rainy" Header="Cargando Datos - SiasoftApp" Height="200" IsBusy="False" Foreground="#FFF44336"/>
+
+            </Grid>
+        </SiaSf:TabItemExt>
+
+        <SiaSf:TabItemExt Name="tabItemExt2"  Header="Consulta Analisis de provedor" FontSize="13"  >
+            <Grid>
+                <Grid.Resources>
+                    <Style x:Key="botones-menu">
+                        <Setter Property="Control.Background" Value="#FFF44336"/>
+                        <Setter Property="Control.BorderBrush" Value="{x:Null}"/>
+                        <Setter Property="Control.Foreground" Value="White"/>
+                        <Setter Property="Control.Height" Value="40"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Control.Margin" Value="0 0 5 0"/>
+                        <Setter Property="Control.Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="Control.IsMouseOver" Value="True">
+                                <Setter Property="Control.Background" Value="#FFF44336"/>
+                                <Setter Property="Control.Cursor" Value="Hand"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style x:Key="Tit_dat">
+                        <Setter Property="Control.Margin" Value="10 0 0 0"/>
+                        <Setter Property="Control.Foreground" Value="#03A9F4"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                        <Setter Property="Control.FontSize" Value="18"/>
+                    </Style>
+                    <Style TargetType="Border" x:Key="borde">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Height" Value="Auto"/>
+                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                    <Style x:Key="title">
+                        <Setter Property="Control.FontSize" Value="18"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+                        <Setter Property="Control.Foreground" Value="#FFF44336"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                    </Style>
+                    <Style x:Key="value">
+                        <Setter Property="Control.FontSize" Value="16"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+                        <Setter Property="Control.Foreground" Value="Black"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                        <Setter Property="Control.Margin" Value="5 0 5 0"/>
+                    </Style>
+                </Grid.Resources>
+
+                <SiaSf:TabControlExt  FontSize="12"  TabItemSelectedBackground="#373737">
+                    <SiaSf:TabItemExt  Header="Consulta por Documento" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0" Style="{StaticResource borde}" Background="#FFF44336">
+                                    <Viewbox Stretch="Uniform" Grid.Row="1">
+                                        <TextBlock Text="Documentos" FontWeight="Bold" VerticalAlignment="Center" Margin="10" FontSize="25" Foreground="White" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+                                    </Viewbox>
+                                </Border>
+
+                                <Border Grid.Column="1" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Registros: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_D1" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="2" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_D2" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="3" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Suma Cos Tot: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_D3" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="4" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Suma Cost Tot NIIF: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_D4" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <StackPanel Grid.Column="5" VerticalAlignment="Center">
+                                    <Button Name="BtnExport" Content="Exportar Consulta a Xls"  Click="BtnExport_Click" Tag="1" Grid.Column="5" Cursor="Hand" Style="{StaticResource botones-menu}"  Width="150"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <SiaSf:SfDataGrid Grid.RowSpan="2" FrozenColumnCount="2" AllowResizingColumns="True" Grid.Row="1" x:Name="GridDocument"  EnableDataVirtualization = "True" AutoGenerateColumns="True" ShowGroupDropArea="True" FontSize="10" AllowFiltering="True" Margin="5" Tag="1"  RowSelectionBrush="#4C808080" HeaderStyle="{StaticResource headerStyle}"  FilterChanged="GridClasific_FilterChanged"  >
+                                    <SiaSf:SfDataGrid.Columns>
+                                        <SiaSf:GridTextColumn HeaderText="cod_emp" MappingName="cod_emp" Width="50"/>
+                                        <SiaSf:GridTextColumn HeaderText="Empresa" MappingName="nom_emp" Width="100"/>
+                                        <SiaSf:GridTextColumn HeaderText="Año" MappingName="ano_doc" Width="45" />
+                                        <SiaSf:GridTextColumn HeaderText="Per" MappingName="per_doc" Width="45" />
+                                        <SiaSf:GridTextColumn HeaderText="Trn" MappingName="cod_trn" Width="45" />
+                                        <SiaSf:GridTextColumn HeaderText="Documento" MappingName="num_trn" Width="90" />
+                                        <SiaSf:GridTextColumn HeaderText="DocRef" MappingName="doc_ref" Width="90"/>
+                                        <SiaSf:GridTextColumn HeaderText="OrdPed" MappingName="ord_ped" Width="90"/>                                       
+                                        <SiaSf:GridTextColumn HeaderText="Fecha" MappingName="fec_trn" Width="90" />
+                                        <SiaSf:GridTextColumn HeaderText="Nit" MappingName="cod_ter" Width="90" />
+                                        <SiaSf:GridTextColumn HeaderText="Nombre Proveedor" MappingName="nom_ter" Width="190" />
+                                        <SiaSf:GridTextColumn HeaderText="Bod" MappingName="cod_bod" Width="90" />
+                                        <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="cod_ref" Width="90"/>
+                                        <SiaSf:GridTextColumn HeaderText="Nombre Referencia" MappingName="nom_ref" Width="190"/>
+                                        <SiaSf:GridNumericColumn HeaderText="Cantidad" MappingName="cantidad" Width="80" NumberDecimalDigits="2"/>
+
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_uni, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoUnit" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_tot, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoTotal" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_uni, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoUnit" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_tot, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoTotal" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_unin, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoUnitNiif" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_totn, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoTotalNiif" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_des, StringFormat='{}{0:c}'}" Width="90" HeaderText="Descto" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_iva, StringFormat='{}{0:c}'}" Width="90" HeaderText="Iva" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_ret, StringFormat='{}{0:c}'}" Width="90" HeaderText="Retefte" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_ica, StringFormat='{}{0:c}'}" Width="90" HeaderText="Ica" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_riva, StringFormat='{}{0:c}'}" Width="90" HeaderText="ReteIva" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=total, StringFormat='{}{0:c}'}" Width="90" HeaderText="Total" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn HeaderText="Linea" MappingName="cod_tip" Width="50"/>
+                                        <SiaSf:GridTextColumn HeaderText="DocCruce" MappingName="doc_cruc" Width="90"/>
+                                        <SiaSf:GridTextColumn HeaderText="Nombre Linea" MappingName="nom_tip" Width="150"/>
+                                        <SiaSf:GridTextColumn HeaderText="Proveedor" MappingName="cod_prv" Width="90"/>
+                                        <SiaSf:GridTextColumn HeaderText="PlazoDias" MappingName="dia_pla" Width="90"/>
+                                        <SiaSf:GridTextColumn HeaderText="FechaVen" MappingName="fec_ven" Width="90"/>
+                                    </SiaSf:SfDataGrid.Columns>
+
+                                </SiaSf:SfDataGrid>
+                            </Grid>
+
+                        </Grid>
+                    </SiaSf:TabItemExt>
+
+                    <SiaSf:TabItemExt  Header="Consulta por producto" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0" Style="{StaticResource borde}" Background="#FFF44336">
+                                    <Viewbox Stretch="Uniform" Grid.Row="1">
+                                        <TextBlock Text="Producto" FontWeight="Bold" VerticalAlignment="Center" Margin="10" FontSize="25" Foreground="White" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+                                    </Viewbox>
+                                </Border>
+
+                                <Border Grid.Column="1" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Registros: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_P1" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="2" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_P2" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="3" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad Devuelta: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_P3" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="4" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Suma Total: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_P4" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <StackPanel Grid.Column="5" VerticalAlignment="Center">
+                                    <Button  Content="Exportar Consulta a Xls"  Click="BtnExport_Click" Tag="2" Grid.Column="5" Cursor="Hand" Style="{StaticResource botones-menu}"  Width="150"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <SiaSf:SfDataGrid Grid.RowSpan="2" FrozenColumnCount="2" AllowResizingColumns="True" Grid.Row="1" x:Name="GridProduct"  EnableDataVirtualization = "True" AutoGenerateColumns="True" ShowGroupDropArea="True" FontSize="10" AllowFiltering="True" Margin="5" Tag="1"  RowSelectionBrush="#4C808080" HeaderStyle="{StaticResource headerStyle}"  FilterChanged="GridClasific_FilterChanged"  >
+                                    <SiaSf:SfDataGrid.Columns>
+                                        <SiaSf:GridTextColumn HeaderText="cod_emp" MappingName="cod_emp" Width="50"/>
+                                        <SiaSf:GridTextColumn HeaderText="Empresa" MappingName="nom_emp" Width="100"/>
+                                        <SiaSf:GridTextColumn HeaderText="DocRef" MappingName="cod_ref" Width="90"/>
+                                        <SiaSf:GridTextColumn HeaderText="Nombre Referencia" MappingName="nom_ref" Width="190"/>
+                                        <SiaSf:GridTextColumn HeaderText="Grupo" MappingName="nom_gru" Width="120"/>
+                                        <SiaSf:GridTextColumn HeaderText="Linea" MappingName="nom_tip" Width="150"/>
+                                        <SiaSf:GridNumericColumn HeaderText="Cant" MappingName="cantidad" Width="80" NumberDecimalDigits="2"/>
+                                        <SiaSf:GridNumericColumn HeaderText="Cant Devu" MappingName="can_dev" Width="80" NumberDecimalDigits="2"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=neto, StringFormat='{}{0:c}'}" Width="90" HeaderText="Neto" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_tot, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoTotal" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_des, StringFormat='{}{0:c}'}" Width="90" HeaderText="Descto" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_iva, StringFormat='{}{0:c}'}" Width="90" HeaderText="Iva" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=total, StringFormat='{}{0:c}'}" Width="90" HeaderText="Total" TextAlignment="Right" AllowFiltering="False"/>
+                                    </SiaSf:SfDataGrid.Columns>
+                                </SiaSf:SfDataGrid>
+                            </Grid>
+
+                        </Grid>
+                    </SiaSf:TabItemExt>
+
+                    <SiaSf:TabItemExt  Header="Consulta por bodega" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0" Style="{StaticResource borde}" Background="#FFF44336">
+                                    <Viewbox Stretch="Uniform" Grid.Row="1">
+                                        <TextBlock Text="Bodega" FontWeight="Bold" VerticalAlignment="Center" Margin="10" FontSize="25" Foreground="White" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+                                    </Viewbox>
+                                </Border>
+
+                                <Border Grid.Column="1" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Registros: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_B1" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="2" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_B2" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="3" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad Devuelta: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_B3" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="4" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Suma Total: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_B4" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <StackPanel Grid.Column="5" VerticalAlignment="Center">
+                                    <Button  Content="Exportar Consulta a Xls"  Click="BtnExport_Click" Tag="3" Grid.Column="5" Cursor="Hand" Style="{StaticResource botones-menu}"  Width="150"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <SiaSf:SfDataGrid Grid.RowSpan="2" FrozenColumnCount="2" AllowResizingColumns="True" Grid.Row="1" x:Name="GridBodega"  EnableDataVirtualization = "True" AutoGenerateColumns="True" ShowGroupDropArea="True" FontSize="10" AllowFiltering="True" Margin="5" Tag="1"  RowSelectionBrush="#4C808080" HeaderStyle="{StaticResource headerStyle}"  FilterChanged="GridClasific_FilterChanged"  >
+                                    <SiaSf:SfDataGrid.Columns>
+                                        <SiaSf:GridTextColumn HeaderText="cod_emp" MappingName="cod_emp" Width="50"/>
+                                        <SiaSf:GridTextColumn HeaderText="Empresa" MappingName="nom_emp" Width="100"/>
+                                        <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="cod_bod" Width="90"/>
+                                        <SiaSf:GridTextColumn HeaderText="Bodega" MappingName="nom_bod" Width="190"/>
+                                        <SiaSf:GridTextColumn HeaderText="Inicial" MappingName="ini_bod" Width="190"/>
+                                        <SiaSf:GridNumericColumn HeaderText="Cant" MappingName="cantidad" Width="80" NumberDecimalDigits="2"/>
+                                        <SiaSf:GridNumericColumn HeaderText="Cant Devu" MappingName="can_dev" Width="80" NumberDecimalDigits="2"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=neto, StringFormat='{}{0:c}'}" Width="90" HeaderText="Neto" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_tot, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoTotal" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_des, StringFormat='{}{0:c}'}" Width="90" HeaderText="Descto" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_iva, StringFormat='{}{0:c}'}" Width="90" HeaderText="Iva" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=total, StringFormat='{}{0:c}'}" Width="90" HeaderText="Total" TextAlignment="Right" AllowFiltering="False"/>
+                                    </SiaSf:SfDataGrid.Columns>
+                                </SiaSf:SfDataGrid>
+                            </Grid>
+
+                        </Grid>
+                    </SiaSf:TabItemExt>
+
+
+                    <SiaSf:TabItemExt  Header="Consulta por linea" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0" Style="{StaticResource borde}" Background="#FFF44336">
+                                    <Viewbox Stretch="Uniform" Grid.Row="1">
+                                        <TextBlock Text="Linea" FontWeight="Bold" VerticalAlignment="Center" Margin="10" FontSize="25" Foreground="White" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+                                    </Viewbox>
+                                </Border>
+
+                                <Border Grid.Column="1" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Registros: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_L1" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="2" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_L2" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="3" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad Devuelta: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_L3" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="4" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Suma Total: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_L4" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <StackPanel Grid.Column="5" VerticalAlignment="Center">
+                                    <Button  Content="Exportar Consulta a Xls"  Click="BtnExport_Click" Tag="4" Grid.Column="5" Cursor="Hand" Style="{StaticResource botones-menu}"  Width="150"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <SiaSf:SfDataGrid Grid.RowSpan="2" FrozenColumnCount="2" AllowResizingColumns="True" Grid.Row="1" x:Name="GridLinea"  EnableDataVirtualization = "True" AutoGenerateColumns="True" ShowGroupDropArea="True" FontSize="10" AllowFiltering="True" Margin="5" Tag="1"  RowSelectionBrush="#4C808080" HeaderStyle="{StaticResource headerStyle}"  FilterChanged="GridClasific_FilterChanged"  >
+                                    <SiaSf:SfDataGrid.Columns>
+                                        <SiaSf:GridTextColumn HeaderText="cod_emp" MappingName="cod_emp" Width="50"/>
+                                        <SiaSf:GridTextColumn HeaderText="Empresa" MappingName="nom_emp" Width="100"/>
+                                        <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="cod_tip" Width="80"/>
+                                        <SiaSf:GridTextColumn HeaderText="Linea" MappingName="nom_tip" Width="150"/>
+                                        <SiaSf:GridNumericColumn HeaderText="Cant" MappingName="cantidad" Width="80" NumberDecimalDigits="2"/>
+                                        <SiaSf:GridNumericColumn HeaderText="Cant Devu" MappingName="can_dev" Width="80" NumberDecimalDigits="2"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=neto, StringFormat='{}{0:c}'}" Width="90" HeaderText="Neto" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_tot, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoTotal" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_des, StringFormat='{}{0:c}'}" Width="90" HeaderText="Descto" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_iva, StringFormat='{}{0:c}'}" Width="90" HeaderText="Iva" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=total, StringFormat='{}{0:c}'}" Width="90" HeaderText="Total" TextAlignment="Right" AllowFiltering="False"/>
+                                    </SiaSf:SfDataGrid.Columns>
+                                </SiaSf:SfDataGrid>
+                            </Grid>
+
+                        </Grid>
+                    </SiaSf:TabItemExt>
+
+                    <SiaSf:TabItemExt  Header="Consulta por provedor" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0" Style="{StaticResource borde}" Background="#FFF44336">
+                                    <Viewbox Stretch="Uniform" Grid.Row="1">
+                                        <TextBlock Text="Provedor" FontWeight="Bold" VerticalAlignment="Center" Margin="10" FontSize="25" Foreground="White" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+                                    </Viewbox>
+                                </Border>
+
+                                <Border Grid.Column="1" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Registros: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_PR1" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="2" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_PR2" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="3" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad Devuelta: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_PR3" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="4" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Suma Total: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_PR4" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <StackPanel Grid.Column="5" VerticalAlignment="Center">
+                                    <Button  Content="Exportar Consulta a Xls"  Click="BtnExport_Click" Tag="5" Grid.Column="5" Cursor="Hand" Style="{StaticResource botones-menu}"  Width="150"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <SiaSf:SfDataGrid Grid.RowSpan="2" FrozenColumnCount="2" AllowResizingColumns="True" Grid.Row="1" x:Name="GridProvedor"  EnableDataVirtualization = "True" AutoGenerateColumns="False" ShowGroupDropArea="True" FontSize="10" AllowFiltering="True" Margin="5" Tag="1"  RowSelectionBrush="#4C808080" HeaderStyle="{StaticResource headerStyle}"  FilterChanged="GridClasific_FilterChanged">
+                                    <SiaSf:SfDataGrid.Columns>
+                                        <SiaSf:GridTextColumn HeaderText="cod_emp" MappingName="cod_emp" Width="50"/>
+                                        <SiaSf:GridTextColumn HeaderText="Empresa" MappingName="nom_emp" Width="100"/>
+                                        <SiaSf:GridTextColumn HeaderText="Cod Prv" MappingName="cod_prv" Width="80"/>
+                                        <SiaSf:GridTextColumn HeaderText="Provedor" MappingName="nom_prv" Width="150"/>
+                                        <SiaSf:GridTextColumn HeaderText="Bodega" MappingName="cod_bod" Width="80"/>
+                                        <SiaSf:GridTextColumn HeaderText="Codigo Ref" MappingName="cod_ref" Width="150"/>
+                                        <SiaSf:GridTextColumn HeaderText="Referencia" MappingName="nom_ref" Width="150"/>
+                                        <SiaSf:GridTextColumn HeaderText="Tercero" MappingName="cod_ter" Width="150"/>
+                                        <SiaSf:GridNumericColumn HeaderText="Cant" MappingName="cantidad" Width="80" NumberDecimalDigits="2"/>
+                                        <SiaSf:GridNumericColumn HeaderText="Cant Devu" MappingName="can_dev" Width="80" NumberDecimalDigits="2"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=neto, StringFormat='{}{0:c}'}" Width="90" HeaderText="Neto" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_tot, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoTotal" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_des, StringFormat='{}{0:c}'}" Width="90" HeaderText="Descto" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_iva, StringFormat='{}{0:c}'}" Width="90" HeaderText="Iva" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=total, StringFormat='{}{0:c}'}" Width="90" HeaderText="Total" TextAlignment="Right" AllowFiltering="False"/>
+                                    </SiaSf:SfDataGrid.Columns>
+                                </SiaSf:SfDataGrid>
+                            </Grid>
+
+                        </Grid>
+                    </SiaSf:TabItemExt>
+                    <SiaSf:TabItemExt  Header="Consulta Documentos de compra" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0" Style="{StaticResource borde}" Background="#FFF44336">
+                                    <Viewbox Stretch="Uniform" Grid.Row="1">
+                                        <TextBlock Text="Provedor" FontWeight="Bold" VerticalAlignment="Center" Margin="10" FontSize="25" Foreground="White" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+                                    </Viewbox>
+                                </Border>
+
+                                <Border Grid.Column="1" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Registros: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_PR11" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="2" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_PR22" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="3" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Cantidad Devuelta: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_PR33" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Column="4" Style="{StaticResource borde}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Suma Total: " Grid.Row="0" Style="{StaticResource title}"/>
+                                        <Viewbox Stretch="Uniform" Grid.Row="1">
+                                            <TextBlock x:Name="Total_PR55" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+
+                                <StackPanel Grid.Column="5" VerticalAlignment="Center">
+                                    <Button  Content="Exportar Consulta a Xls"  Click="BtnExport_Click" Tag="5" Grid.Column="5" Cursor="Hand" Style="{StaticResource botones-menu}"  Width="150"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <SiaSf:SfDataGrid Grid.RowSpan="2" FrozenColumnCount="2" AllowResizingColumns="True" Grid.Row="1" x:Name="GridProvedorDoc"  EnableDataVirtualization = "True" AutoGenerateColumns="False" ShowGroupDropArea="True" FontSize="10" AllowFiltering="True" Margin="5" Tag="1"  RowSelectionBrush="#4C808080" HeaderStyle="{StaticResource headerStyle}"  FilterChanged="GridClasific_FilterChanged">
+                                    <SiaSf:SfDataGrid.Columns>
+                                        <SiaSf:GridTextColumn HeaderText="cod_emp" MappingName="cod_emp" Width="50"/>
+                                        <SiaSf:GridTextColumn HeaderText="Empresa" MappingName="nom_emp" Width="100"/>
+                                        <SiaSf:GridTextColumn HeaderText="Trn" MappingName="cod_trn" Width="70"/>
+                                        <SiaSf:GridTextColumn HeaderText="Documento" MappingName="num_trn" Width="100"/>
+                                        <SiaSf:GridTextColumn HeaderText="FecDocum" MappingName="fec_trn" Width="120"/>
+                                        <SiaSf:GridTextColumn HeaderText="Proveedor" MappingName="cod_prv" Width="100"/>
+                                        <SiaSf:GridTextColumn HeaderText="NombreProveedor" MappingName="nom_ter" Width="300"/>
+                                        <SiaSf:GridTextColumn HeaderText="Bodega" MappingName="cod_bod" Width="80"/>
+                                        <SiaSf:GridTextColumn HeaderText="FacturaPrv" MappingName="doc_ref" Width="100"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=cos_tot, StringFormat='{}{0:c}'}" Width="90" HeaderText="CostoTotal" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=val_iva, StringFormat='{}{0:c}'}" Width="90" HeaderText="Iva" TextAlignment="Right" AllowFiltering="False"/>
+                                        <SiaSf:GridTextColumn DisplayBinding="{Binding Path=total, StringFormat='{}{0:c}'}" Width="90" HeaderText="Total" TextAlignment="Right" AllowFiltering="False"/>
+                                    </SiaSf:SfDataGrid.Columns>
+                                </SiaSf:SfDataGrid>
+                            </Grid>
+
+                        </Grid>
+
+                    </SiaSf:TabItemExt>
+                </SiaSf:TabControlExt>
+
+            </Grid>
+        </SiaSf:TabItemExt>
+
+    </SiaSf:TabControlExt>
+
+
+
+</UserControl>

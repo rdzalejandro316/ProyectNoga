@@ -1,0 +1,14 @@
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo.csprojAssemblyReference.cache
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo.g.cs
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo_MarkupCompile.cache
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo_MarkupCompile.lref
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo.baml
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo.g.resources
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo.Properties.Resources.resources
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo.csproj.GenerateResource.cache
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo.csproj.CoreCompileInputs.cache
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo.csproj.CopyComplete
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo.dll
+D:\Empresas\SiasoftGS\Library\projectGS\InvDocEnviarCorreo\obj\Debug\InvDocEnviarCorreo.pdb
+D:\Empresas\SiasoftGS\Library\InvDocEnviarCorreo.dll
+D:\Empresas\SiasoftGS\Library\InvDocEnviarCorreo.pdb

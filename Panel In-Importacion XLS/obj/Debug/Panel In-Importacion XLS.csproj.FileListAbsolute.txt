@@ -1,0 +1,14 @@
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS.g.cs
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS_MarkupCompile.cache
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS_MarkupCompile.lref
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS.baml
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS.g.resources
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel_In_Importacion_XLS.Properties.Resources.resources
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS.csproj.CopyComplete
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS.dll
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\project\Panel In-Importacion XLS\obj\Debug\Panel In-Importacion XLS.pdb
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\Panel In-Importacion XLS.dll
+C:\Users\PC\Desktop\SiasoftGS-alejo\Library\Panel In-Importacion XLS.pdb

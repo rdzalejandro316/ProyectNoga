@@ -1,0 +1,109 @@
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.g.cs
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.cache
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.lref
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.baml
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.g.resources
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.Properties.Resources.resources
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.GenerateResource.cache
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.dll
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.pdb
+C:\Users\pc\Desktop\SiasoftAppGS\Library\ImporatDocXML.dll
+C:\Users\pc\Desktop\SiasoftAppGS\Library\ImporatDocXML.pdb
+C:\Users\pc\Desktop\SiasoftAppGS\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csprojResolveAssemblyReference.cache
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.g.cs
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.cache
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.lref
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.baml
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.g.resources
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.Properties.Resources.resources
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.GenerateResource.Cache
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.dll
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.pdb
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\ImporatDocXML.dll
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\ImporatDocXML.pdb
+C:\Users\Grupo Saavedra\Desktop\SiasoftGS-alejo\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csprojResolveAssemblyReference.cache
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML.csprojAssemblyReference.cache
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML.g.cs
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.cache
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.lref
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML.baml
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML.g.resources
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML.Properties.Resources.resources
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.GenerateResource.cache
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CoreCompileInputs.cache
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CopyComplete
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML.dll
+C:\Users\alejandro\Desktop\ImporatDocXML\ImporatDocXML\obj\Debug\ImporatDocXML.pdb
+C:\Users\alejandro\Desktop\ImporatDocXML.dll
+C:\Users\alejandro\Desktop\ImporatDocXML.pdb
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csprojAssemblyReference.cache
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.g.cs
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.cache
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.lref
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.baml
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.g.resources
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.Properties.Resources.resources
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.GenerateResource.cache
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CoreCompileInputs.cache
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CopyComplete
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.dll
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.pdb
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\ImporatDocXML.dll
+C:\Users\alejandro\Desktop\SiasoftLeco\Library\ImporatDocXML.pdb
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\ImporatDocXML.dll
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\ImporatDocXML.pdb
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.csprojAssemblyReference.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.g.cs
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.lref
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.dll
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.pdb
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.baml
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.g.resources
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.Properties.Resources.resources
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.GenerateResource.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CoreCompileInputs.cache
+C:\Users\alejandro\Desktop\SiasoftGS-Alejandro\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CopyComplete
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.g.cs
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.cache
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.lref
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.baml
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.g.resources
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.Properties.Resources.resources
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CopyComplete
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.dll
+C:\Users\USER\Desktop\SiasoftGS\Library\projectGS\ImporatDocXML\obj\Debug\ImporatDocXML.pdb
+C:\Users\USER\Desktop\SiasoftGS\Library\ImporatDocXML.dll
+C:\Users\USER\Desktop\SiasoftGS\Library\ImporatDocXML.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CopyComplete
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\ImporatDocXML.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\ImporatDocXML.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csprojAssemblyReference.cache
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csprojAssemblyReference.cache
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.g.cs
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.cache
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML_MarkupCompile.lref
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.baml
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.g.resources
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.Properties.Resources.resources
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.GenerateResource.cache
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CoreCompileInputs.cache
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.csproj.CopyComplete
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.dll
+C:\SiasoftGS\SiasoftGSV2019\Library\project\ImporatDocXML\obj\Debug\ImporatDocXML.pdb
+C:\SiasoftGS\SiasoftGSV2019\Library\ImporatDocXML.dll
+C:\SiasoftGS\SiasoftGSV2019\Library\ImporatDocXML.pdb

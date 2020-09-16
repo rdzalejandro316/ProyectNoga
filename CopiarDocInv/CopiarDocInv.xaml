@@ -1,0 +1,142 @@
+﻿<Window x:Class="SiasoftAppExt.CopiarDocInv"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SiasoftAppExt"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"            
+             Width="800" Height="300" Loaded="Window_Loaded" syncfusionskin:SfSkinManager.VisualStyle="Metro">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="Btn">
+            <Setter Property="Background" Value="#F44336"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="5">
+                <Border Background="White">
+                    <Border.Effect>
+                        <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                    </Border.Effect>
+                </Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Background="#F44336">
+                        <TextBlock Text="Documento a Copiar" TextAlignment="Center" Foreground="White" VerticalAlignment="Center" FontSize="18" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="0.8*"/>
+                            <RowDefinition Height="1.2*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="Tipo Trn : " Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                        <ComboBox Name="t_TrnCop" Grid.Row="1" Grid.Column="1" Width="280" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Padding="5" BorderBrush="Black"/>
+
+                        <TextBlock Text="Numero : " Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+
+                        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                            <TextBox Tag="doc_viejo" Name="Tx_Numero"  Width="200" Padding="5" VerticalAlignment="Center" BorderBrush="Black" LostFocus="Tx_Numero_LostFocus"/>
+                            <Button Name="BtnDoc" ToolTip="Ver Documento" Style="{StaticResource Btn}" Content="..." Margin="0" Width="40" Click="BtnDoc_Click"/>
+                        </StackPanel>
+
+
+                        <Button Name="BtnBuscar" Grid.Row="5" Grid.Column="1" Width="100" Content="Buscar" HorizontalAlignment="Right" Margin="5" Click="BtnBuscar_Click" Style="{StaticResource Btn}"/>
+                    </Grid>
+
+
+                </Grid>
+
+            </Grid>
+
+            <Grid Margin="5" Grid.Column="1">
+                <Border Background="White">
+                    <Border.Effect>
+                        <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                    </Border.Effect>
+                </Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Background="#F44336">
+                        <TextBlock Text="Documento Nuevo" TextAlignment="Center" Foreground="White" VerticalAlignment="Center" FontSize="18" />
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="0 0 0 10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="Tipo Trn : " Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                        <ComboBox Name="t_TrnNue" Grid.Row="1" Grid.Column="1" Width="280" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11"  Padding="5" BorderBrush="Black"/>
+
+                        <TextBlock Text="Numero : " Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                        <TextBox Name="Tx_NumeroNue" Grid.Row="2" Grid.Column="1"  Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5" BorderBrush="Black"/>
+
+                        <TextBlock Text="Fecha : " Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                        <DatePicker Name="dp_fecha" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="5" Padding="5" Width="120" HorizontalAlignment="Left"/>
+
+                        <TextBlock Text="Descripcion : " Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                        <TextBox Name="Tx_DescNue" Grid.RowSpan="2" Grid.Row="4" Grid.Column="1" Margin="5" Width="250" HorizontalAlignment="Left" BorderBrush="Black" MaxLength="50"/>
+                    </Grid>
+
+
+
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+
+            <!--<syncfusion:SfDataGrid Name="dataGrid"  Grid.Row="1" FrozenColumnCount="2" EnableDataVirtualization = "True" AutoGenerateColumns="False" ShowGroupDropArea="True" FontSize="10" AllowFiltering="True" SelectionMode="Single" />-->
+        </Grid>
+
+        <Grid Grid.Row="2" Background="#373737">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Button x:Name="BtnProcesar" Content="Procesar" Width="100" Margin="5 0 5 0" Click="BtnProcesar_Click" Style="{StaticResource Btn}"/>
+                <Button x:Name="BtnSalir" Content="Salir" Width="100" Margin="5 0 5 0" Click="BtnSalir_Click" Style="{StaticResource Btn}"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+
+</Window>

@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="SiasoftAppExt.CierreCaja"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SiasoftAppExt"
+             xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+             Height="500" Width="1000">
+
+    <Grid>
+
+        <SiaSf:TabControlExt Name="TabControl1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  SiaSf:SkinStorage.VisualStyle="Metro"  IsDisableUnloadTabItemExtContent="False" EnableLabelEdit="False">
+            <SiaSf:TabItemExt Name="tabItemExt1"  Header="Configuracion" Width="Auto" HeaderMargin="10 0 10 0 " FontSize="12" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="80"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid  x:Name="GridConfiguracion" Height="260"  Width="400" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border Background="White">
+                            <Border.Effect>
+                                <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                            </Border.Effect>
+                        </Border>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="Fecha cierre : " VerticalAlignment="Bottom" HorizontalAlignment="Right" FontWeight="Bold"/>
+                            <DatePicker Name="Tx_fecierre" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120"/>
+
+                            <TextBlock Grid.Row="1" Text="Fecha Consignacion : " VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                            <DatePicker Name="Tx_consg" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="120"/>
+
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="Imprimir relacion de consignacion" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" Text="Imprimir relacion de cheques Postf/Dev" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold"/>
+
+                            <Grid Grid.Row="2" Grid.RowSpan="2" Name="GridCheck">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <CheckBox Name="R1" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 5 0" Padding="5"/>
+                                <CheckBox Name="R2" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 5 0" Padding="5"/>
+                            </Grid>
+
+                            <TextBlock Grid.Row="4" Text="Cerra Caja : " VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                            <ComboBox Name="ComCiere" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" Width="100" HorizontalAlignment="Left">
+                                <ComboBoxItem IsSelected="True" Content="No"/>
+                                <ComboBoxItem Content="Si"/>
+                            </ComboBox>
+
+                            <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Button Name="BtnConsultar" Content="Consultar" Background="#03A9F4" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Width="120" Margin="5" Padding="10" Click="BtnConsultar_Click"/>
+                                <Button Name="BtnSalir" Content="Salir" Background="#03A9F4" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Width="120" Margin="5" Padding="10" Click="BtnSalir_Click"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Width="550" Margin="10">
+                        <Border Background="White">
+                            <Border.Effect>
+                                <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                            </Border.Effect>
+                        </Border>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.8*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid>
+                                <TextBlock Text="Fecha Actuales" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" Foreground="#03A9F4" Margin="10 0 0 0"/>
+
+                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0 0 20 0">
+                                    <TextBlock Text="Consecutivo : " HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold"/>
+                                    <TextBlock Name="Tx_consecutivo"/>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="Fec Act Cierre : " VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold" Margin="15 0 0 0"/>
+                                <DatePicker Name="Tx_cierre_actual" Grid.Column="1" Margin="5" Width="120" IsEnabled="False"/>
+
+                                <TextBlock Text="Fec Act Consignacion : " Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                                <DatePicker Name="Tx_consi_actual"  Grid.Column="3" Margin="5 5 20 5" IsEnabled="False" Width="120"/>
+
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                </Grid>
+            </SiaSf:TabItemExt>
+            <SiaSf:TabItemExt Name="tabItemExt2" Header="Consulta" Width="Auto" HeaderMargin="10 0 10 0 " FontSize="12">
+                <Grid>
+                    <SiaSf:TabControlExt Grid.Row="0"  Name="TabControl2" Margin="0,0,0,1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  SiaSf:SkinStorage.VisualStyle="Metro" IsDisableUnloadTabItemExtContent="True" EnableLabelEdit="False" TabItemSelectedBackground="#373737" CloseButtonType="Hide"/>
+                </Grid>
+            </SiaSf:TabItemExt>
+        </SiaSf:TabControlExt>
+
+    </Grid>
+
+</UserControl>

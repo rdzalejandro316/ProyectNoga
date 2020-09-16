@@ -1,0 +1,138 @@
+﻿<Window x:Class="SiasoftAppExt.ContabilizacionFletes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+             xmlns:local="clr-namespace:SiasoftAppExt"
+             Width="800" Height="450" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style TargetType="Border" x:Key="borde">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="syncfusion:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="Background" Value="#373737"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Style="{StaticResource borde}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Fecha : " VerticalAlignment="Center" Margin="10 0 0 0" FontWeight="Bold" HorizontalAlignment="Right"/>
+                <DatePicker Name="Tx_fecha" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <TextBlock Text="Factura : " Grid.Column="2" VerticalAlignment="Center" Margin="10 0 0 0" FontWeight="Bold"/>
+                <TextBox Name="Tx_factura" Grid.Column="3" VerticalAlignment="Center" Padding="2"/>
+
+                <TextBlock Text="Fecha de ven : " Grid.Column="4" VerticalAlignment="Center" Margin="10 0 0 0" FontWeight="Bold"/>
+                <DatePicker Name="Tx_fec_ven" Grid.Column="5" VerticalAlignment="Center"/>
+
+                <TextBlock Text="Transportador : " Grid.Row="1"  VerticalAlignment="Center" FontWeight="Bold" Margin="5 0 0 0"/>
+                <TextBox Name="TX_trans" Padding="2" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" PreviewKeyDown="TextBox_PreviewKeyDown" LostFocus="TX_trans_LostFocus"/>
+                <TextBox Name="TX_transName" Padding="2" Margin="5 0 0 0" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Center" IsEnabled="False" IsReadOnly="True" Background="LightGray"/>
+                
+                <Button Name="BtnConsultar" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Width="100" Margin="10 5 5 5" Content="Consultar" HorizontalAlignment="Left" Background="#03A9F4" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Click="BtnConsultar_Click"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Style="{StaticResource borde}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <syncfusion:SfDataGrid x:Name="dataGrid1" AllowResizingColumns="True"  EnableDataVirtualization="True" AutoGenerateColumns="False" AllowFiltering="True"  Margin="5,7,5,3" HeaderStyle="{StaticResource headerStyle}"  CurrentCellValueChanged="dataGrid1_CurrentCellValueChanged">
+                        <syncfusion:SfDataGrid.Columns>
+                            <syncfusion:GridTextColumn HeaderText="Guia" MappingName="n_guia" Width="120"/>
+                            <syncfusion:GridTextColumn HeaderText="Valor flete" MappingName="vr_flete" Width="120"/>
+                            <syncfusion:GridTextColumn HeaderText="Seguro" MappingName="vr_seguro" Width="150"/>
+                            <syncfusion:GridTextColumn MappingName="cod_cli" IsHidden="True"/>
+                            <syncfusion:GridTextColumn MappingName="cod_cco" IsHidden="True"/>
+                            <syncfusion:GridCheckBoxColumn HeaderText="Check" MappingName="check" Width="70" AllowEditing="True" />
+                        </syncfusion:SfDataGrid.Columns>
+                    </syncfusion:SfDataGrid>
+                    
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <TextBlock Text="TOTAL REG: " Margin="5 0 0 0" FontWeight="Bold" VerticalAlignment="Center"/>
+                        <TextBlock Name="TxRegis" Margin="2 0 0 0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="TOTALES" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="#03A9F4" FontWeight="Bold"/>
+
+
+                    <TextBlock Text="Fletes : " Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                    <TextBox Name="Tx_fletes" Grid.Row="1" Grid.Column="1" Margin="5" Padding="2" VerticalAlignment="Center"/>
+
+                    <TextBlock Text="Seguros : " Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                    <TextBox Name="Tx_seguros" Grid.Row="2" Grid.Column="1" Margin="5" Padding="2" VerticalAlignment="Center"/>
+
+                    <TextBlock Text="Descuento : " Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                    <TextBox Name="Tx_descuento" Grid.Row="3" Grid.Column="1" Margin="5" Padding="2" VerticalAlignment="Center"/>
+
+                    <TextBlock Text="Total Factura: " Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+                    <TextBox Name="Tx_totFact" Grid.Row="4" Grid.Column="1" Margin="5" Padding="2" VerticalAlignment="Center"/>
+
+                    <StackPanel Grid.Row="5" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                        <Button Name="BtnGenerar" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" Width="100" Margin="10 5 5 5" Content="Generar" HorizontalAlignment="Left" Background="#03A9F4" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Click="BtnGenerar_Click"/>
+                        <Button Name="BtnSalir" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2" Width="100" Margin="10 5 5 5" Content="Salir" HorizontalAlignment="Left" Background="#03A9F4" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Click="BtnSalir_Click"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+
+</Window>

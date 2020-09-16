@@ -1,0 +1,645 @@
+﻿<UserControl x:Class="SiasoftAppExt.ClasificacionABC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+             xmlns:chart="clr-namespace:Syncfusion.UI.Xaml.Charts;assembly=Syncfusion.SfChart.WPF" 
+             xmlns:local="clr-namespace:SiasoftAppExt"             
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1300" Margin="5,5,5,5" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SiaSf:SkinStorage.VisualStyle="Metro">
+
+
+
+
+    <UserControl.Resources>
+        <local:ColorConverter x:Key="converter" />
+
+        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#373737"/>
+        </Style>
+        <Style TargetType="Grid" x:Key="grid">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="Height" Value="Auto"/>
+        </Style>
+        <Style TargetType="Border" x:Key="card">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Direction="0" ShadowDepth="0.8" BlurRadius="5" Color="Black"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="botones">
+            <Setter Property="Background" Value="Orange"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="5 0 5 0"/>
+            <Setter Property="Width" Value="140"/>
+            <Setter Property="Height" Value="30"/>
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Background" Value="DarkOrange"/>
+                    <Setter Property="Control.Cursor" Value="Hand"/>
+                </Trigger>
+                <Trigger Property="Control.IsFocused" Value="True">
+                    <Setter Property="Control.Background" Value="DarkOrange"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="SlateGray" />
+                    <Setter Property="Foreground" Value="DarkOrange"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <SiaSf:TabControlExt Name="TabControl1" Margin="0,0,10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"   IsDisableUnloadTabItemExtContent="True"  EnableLabelEdit="False" TabItemSelectedBackground="#373737" CloseButtonType="Hide">
+        <SiaSf:TabItemExt Name="tabItemExt1"  Header="Configuracion" FontSize="15" >
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid  x:Name="GridConfiguracion" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource grid}">
+                    <Border Style="{StaticResource card}"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="3" Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Fecha Inicial" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="10"/>
+                            <TextBlock Grid.Column="1" Text="Fecha final" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="10"/>
+                        </Grid>
+
+
+                        <TextBlock Grid.Column="2" Grid.Row="3" FontSize="12" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="right" FontWeight="Bold">Fecha:</TextBlock>
+                        <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Horizontal">
+                            <DatePicker Name="FecIni"   HorizontalAlignment="Left" Text="{Binding CabSource.FechaIni}" VerticalAlignment="Center" Width="100" Height="28" Grid.Column="3" Grid.Row="2" Margin="5,0,0,0"  FontSize="11"/>
+                            <DatePicker Name="FecFin"   HorizontalAlignment="Left" Text="{Binding CabSource.FechaIni}" VerticalAlignment="Center" Width="100" Height="28" Grid.Column="3" Grid.Row="2" Margin="5,0,0,0"  FontSize="11"/>
+                        </StackPanel>
+
+
+                        <TextBlock  Grid.Column="2" Grid.Row="4" Foreground="Black"  FontSize="12" VerticalAlignment="Center" HorizontalAlignment="right" FontWeight="Bold">Empresa:</TextBlock>
+                        <SiaSf:ComboBoxAdv FontSize="12" x:Name="comboBoxEmpresas" Margin="5" AllowMultiSelect="True" Grid.ColumnSpan="2" Grid.Column="3" Grid.Row="4" Width="180" HorizontalAlignment="Left" DefaultText="Seleccione Cuenta" DisplayMemberPath="businessname"  SelectedValuePath="businesscode"  SelectedValueDelimiter="," />
+
+                        <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Grid.Column="2" Grid.Row="7" Name="BtnEjecutar" Command="{Binding RegisterCommand}" CommandParameter="{Binding ElementName=BtnEjecutar}" Click="BtnEjecutar_Click" Style="{StaticResource botones}" Content="Consultar"/>
+                                <Button Grid.Column="3" Grid.Row="7" Foreground="WhiteSmoke" Name="BtnSalir" Click="BtnSalir_Click" Style="{StaticResource botones}" Content="Salir"/>
+                            </StackPanel>
+                        </Grid>
+
+
+
+                    </Grid>
+
+                </Grid>
+                <Grid Grid.Row="1" >
+                </Grid>
+
+                <SiaSf:SfBusyIndicator  Focusable="False" Name="sfBusyIndicator" Margin="5" VerticalAlignment="Bottom" FontSize="12" AnimationSpeed="100" AnimationType="Rainy" Header="Cargando Datos - SiasoftApp" Height="200" IsBusy="False" Foreground="Orange"/>
+
+            </Grid>
+        </SiaSf:TabItemExt>
+
+        <SiaSf:TabItemExt Name="tabItemExt2"  Header="Consulta Clasificacion ABC" FontSize="13"  >
+            <Grid>
+                <Grid.Resources>
+                    <Style x:Key="botones-menu">
+                        <Setter Property="Control.Background" Value="#FF9800"/>
+                        <Setter Property="Control.BorderBrush" Value="{x:Null}"/>
+                        <Setter Property="Control.Foreground" Value="White"/>
+                        <Setter Property="Control.Height" Value="40"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Control.Margin" Value="0 0 5 0"/>
+                        <Setter Property="Control.Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="Control.IsMouseOver" Value="True">
+                                <Setter Property="Control.Background" Value="#FF117A65"/>
+                                <Setter Property="Control.Cursor" Value="Hand"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style x:Key="Tit_dat">
+                        <Setter Property="Control.Margin" Value="10 0 0 0"/>
+                        <Setter Property="Control.Foreground" Value="#03A9F4"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                        <Setter Property="Control.FontSize" Value="18"/>
+                    </Style>
+                    <Style TargetType="Border" x:Key="borde">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Height" Value="Auto"/>
+                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                    <Style x:Key="title">
+                        <Setter Property="Control.FontSize" Value="18"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+                        <Setter Property="Control.Foreground" Value="#FFC107"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                    </Style>
+                    <Style x:Key="value">
+                        <Setter Property="Control.FontSize" Value="16"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+                        <Setter Property="Control.Foreground" Value="Black"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                        <Setter Property="Control.Margin" Value="5 0 5 0"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Border Grid.Column="0" Style="{StaticResource borde}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Registros: " Grid.Row="0" Style="{StaticResource title}"/>
+                                <Viewbox Stretch="Uniform" Grid.Row="1">
+                                    <TextBlock x:Name="Total1" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                </Viewbox>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Column="1" Style="{StaticResource borde}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Cantidad: " Grid.Row="0" Style="{StaticResource title}"/>
+                                <Viewbox Stretch="Uniform" Grid.Row="1">
+                                    <TextBlock x:Name="Total2" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                </Viewbox>
+                            </Grid>
+                        </Border>
+
+                        <!--<Border Grid.Column="3" Style="{StaticResource borde}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Suma Subtotal: " Grid.Row="0" Style="{StaticResource title}"/>
+                                <Viewbox Stretch="Uniform" Grid.Row="1">
+                                    <TextBlock x:Name="Total3" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                </Viewbox>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Column="4" Style="{StaticResource borde}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Suma Subtotal: " Grid.Row="0" Style="{StaticResource title}"/>
+                                <Viewbox Stretch="Uniform" Grid.Row="1">
+                                    <TextBlock x:Name="Total4" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                                </Viewbox>
+                            </Grid>
+                        </Border>-->
+
+                        <StackPanel Grid.Column="5" VerticalAlignment="Center">
+                            <Button Name="BtnExport" Content="Exportar Consulta a Xls"  Click="BtnExport_Click" Tag="1" Grid.Column="5" Cursor="Hand" Style="{StaticResource botones-menu}"  Width="150"/>
+                            <Button Name="BtnHidden" Content="Ocultar Graficos"  Click="BtnHidden_Click" Tag="0" Grid.Column="5" Cursor="Hand" Style="{StaticResource botones-menu}" Background="#373737" Width="150"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Name="GridSpan" Margin="5" >
+
+                        <SiaSf:SfDataGrid Grid.RowSpan="2" FrozenColumnCount="2" AllowResizingColumns="True" Grid.Row="1" x:Name="GridClasific"  EnableDataVirtualization = "True" AutoGenerateColumns="False" ShowGroupDropArea="True" FontSize="10" AllowFiltering="True" Margin="5" Tag="1"  RowSelectionBrush="#4C808080" HeaderStyle="{StaticResource headerStyle}"  FilterChanged="VentasPorProducto_FilterChanged"  QueryRowHeight="dataGrid_QueryRowHeight">
+                            <SiaSf:SfDataGrid.Columns>
+                                <SiaSf:GridTextColumn HeaderText="Referencia" MappingName="cod_ref" Width="100" />
+                                <SiaSf:GridTextColumn HeaderText="Nombre Producto" MappingName="nom_ref" Width="180"  />
+                                <SiaSf:GridTextColumn HeaderText="Cod Lin" MappingName="cod_tip" Width="70" />
+                                <SiaSf:GridTextColumn HeaderText="Linea" MappingName="nom_tip" Width="100">
+                                    <!--<SiaSf:GridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Height="50"  FontWeight="Bold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Text="Nombre de Linea"/>
+                                        </DataTemplate>
+                                    </SiaSf:GridTextColumn.HeaderTemplate>-->
+                                </SiaSf:GridTextColumn>
+                                <SiaSf:GridTextColumn HeaderText="Provedor" MappingName="cod_prv" Width="80" />
+                                <SiaSf:GridNumericColumn HeaderText="Vta Cnt" MappingName="vta_cnt" Width="100" NumberDecimalDigits="2" />
+                                <SiaSf:GridNumericColumn HeaderText="Vta Cnt Par" MappingName="vtacntpar" Width="100" NumberDecimalDigits="2" />
+                                <SiaSf:GridNumericColumn HeaderText="Acum Cnt Porc" MappingName="acumcntporc" Width="100" NumberDecimalDigits="2" />
+
+                                <SiaSf:GridTextColumn HeaderText="califcnt" MappingName="califcnt" Width="100">
+                                    <SiaSf:GridTextColumn.CellStyle>
+                                        <Style TargetType="SiaSf:GridCell">
+                                            <Setter Property="Background" Value="{Binding Path=califcnt,Converter={StaticResource converter}}"/>
+                                        </Style>
+                                    </SiaSf:GridTextColumn.CellStyle>
+                                </SiaSf:GridTextColumn>
+
+
+                                <SiaSf:GridCurrencyColumn HeaderText="Vta Subtotal" MappingName="vta_subtotal" Width="100"/>
+                                <SiaSf:GridNumericColumn HeaderText="vta Sub Part" MappingName="vtasubpart" Width="100" NumberDecimalDigits="2" />
+                                <SiaSf:GridNumericColumn HeaderText="Acum Sub Porc" MappingName="acumsubporc" Width="100" NumberDecimalDigits="2" />
+                                <SiaSf:GridTextColumn HeaderText="califsub" MappingName="califsub" Width="100">
+                                    <SiaSf:GridTextColumn.CellStyle>
+                                        <Style TargetType="SiaSf:GridCell">
+                                            <Setter Property="Background" Value="{Binding Path=califsub,Converter={StaticResource converter}}"/>
+                                        </Style>
+                                    </SiaSf:GridTextColumn.CellStyle>
+                                </SiaSf:GridTextColumn>
+
+
+                                <SiaSf:GridCurrencyColumn HeaderText="Saldo Fin" MappingName="saldo_fin" Width="100"/>
+                                <SiaSf:GridCurrencyColumn HeaderText="Cos Tot" MappingName="cos_tot" Width="100" />
+                                <SiaSf:GridNumericColumn HeaderText="Acum Cost Porc" MappingName="acumcostporc" Width="100" NumberDecimalDigits="2" />
+                                <SiaSf:GridTextColumn HeaderText="Calif Cost" MappingName="califcost" Width="100">
+                                    <SiaSf:GridTextColumn.CellStyle>
+                                        <Style TargetType="SiaSf:GridCell">
+                                            <Setter Property="Background" Value="{Binding Path=califcost,Converter={StaticResource converter}}"/>
+                                        </Style>
+                                    </SiaSf:GridTextColumn.CellStyle>
+                                </SiaSf:GridTextColumn>
+
+
+                            </SiaSf:SfDataGrid.Columns>
+
+                        </SiaSf:SfDataGrid>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <chart:SfChart Name="Chart1_clasific" Grid.Column="0" Margin="5" AreaBorderBrush="{x:Null}" Header="Clasificacion Cantidad" FontWeight="Bold">
+                            <chart:SfChart.Resources>
+                                <ItemsPanelTemplate x:Key="itemPanelTemplate">
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </chart:SfChart.Resources>
+
+                            <chart:SfChart.Legend>
+                                <chart:ChartLegend FontSize="9" DockPosition="Top" ToggleSeriesVisibility="True" ItemsPanel="{StaticResource itemPanelTemplate}"/>
+                            </chart:SfChart.Legend>
+
+                            <chart:DoughnutSeries  Name="ChartCircle1" XBindingPath="califcnt" YBindingPath="acumcntporc" ShowTooltip="True" EnableAnimation="True" AnimationDuration="00:00:03" Palette="Custom">
+                                <chart:DoughnutSeries.ColorModel>
+                                    <chart:ChartColorModel>
+                                        <chart:ChartColorModel.CustomBrushes>
+                                            <SolidColorBrush Color="#03A9F4"/>
+                                            <SolidColorBrush Color="#16a085"/>
+                                            <SolidColorBrush Color="#f1c40f"/>
+                                            <SolidColorBrush Color="#F44336"/>
+                                            <SolidColorBrush Color="#3F51B5"/>
+                                        </chart:ChartColorModel.CustomBrushes>
+                                    </chart:ChartColorModel>
+                                </chart:DoughnutSeries.ColorModel>
+                                <chart:DoughnutSeries.AdornmentsInfo>
+                                    <chart:ChartAdornmentInfo AdornmentsPosition="Bottom" SegmentLabelContent="Percentage" HorizontalAlignment="Center" VerticalAlignment="Center" ShowLabel="True"/>
+                                </chart:DoughnutSeries.AdornmentsInfo>
+                            </chart:DoughnutSeries>
+                        </chart:SfChart>
+
+                        <chart:SfChart Name="Chart2_clasific" Grid.Column="1" Margin="5" AreaBorderBrush="{x:Null}" Header="Clasificacion Subtotal" FontWeight="Bold">
+                            <chart:SfChart.Resources>
+                                <ItemsPanelTemplate x:Key="itemPanelTemplate">
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </chart:SfChart.Resources>
+
+                            <chart:SfChart.Legend>
+                                <chart:ChartLegend FontSize="9" DockPosition="Top" ToggleSeriesVisibility="True" ItemsPanel="{StaticResource itemPanelTemplate}"/>
+                            </chart:SfChart.Legend>
+
+                            <chart:DoughnutSeries  Name="ChartCircle2" XBindingPath="califsub" YBindingPath="acumsubporc" ShowTooltip="True" EnableAnimation="True" AnimationDuration="00:00:03" Palette="Custom">
+                                <chart:DoughnutSeries.ColorModel>
+                                    <chart:ChartColorModel>
+                                        <chart:ChartColorModel.CustomBrushes>
+                                            <SolidColorBrush Color="#03A9F4"/>
+                                            <SolidColorBrush Color="#16a085"/>
+                                            <SolidColorBrush Color="#f1c40f"/>
+                                            <SolidColorBrush Color="#F44336"/>
+                                            <SolidColorBrush Color="#3F51B5"/>
+                                        </chart:ChartColorModel.CustomBrushes>
+                                    </chart:ChartColorModel>
+                                </chart:DoughnutSeries.ColorModel>
+                                <chart:DoughnutSeries.AdornmentsInfo>
+                                    <chart:ChartAdornmentInfo AdornmentsPosition="Bottom" SegmentLabelContent="Percentage" HorizontalAlignment="Center" VerticalAlignment="Center" ShowLabel="True"/>
+                                </chart:DoughnutSeries.AdornmentsInfo>
+                            </chart:DoughnutSeries>
+                        </chart:SfChart>
+
+                        <chart:SfChart Name="Chart3_clasific" Grid.Column="2" Margin="5" AreaBorderBrush="{x:Null}" Header="Clasificacion Costo" FontWeight="Bold">
+                            <chart:SfChart.Resources>
+                                <ItemsPanelTemplate x:Key="itemPanelTemplate">
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </chart:SfChart.Resources>
+
+                            <chart:SfChart.Legend>
+                                <chart:ChartLegend FontSize="9" DockPosition="Top" ToggleSeriesVisibility="True" ItemsPanel="{StaticResource itemPanelTemplate}"/>
+                            </chart:SfChart.Legend>
+
+                            <chart:DoughnutSeries  Name="ChartCircle3" XBindingPath="califcost" YBindingPath="acumcostporc" ShowTooltip="True" EnableAnimation="True" AnimationDuration="00:00:03" Palette="Custom">
+                                <chart:DoughnutSeries.ColorModel>
+                                    <chart:ChartColorModel>
+                                        <chart:ChartColorModel.CustomBrushes>
+                                            <SolidColorBrush Color="#03A9F4"/>
+                                            <SolidColorBrush Color="#16a085"/>
+                                            <SolidColorBrush Color="#f1c40f"/>
+                                            <SolidColorBrush Color="#F44336"/>
+                                            <SolidColorBrush Color="#3F51B5"/>
+                                        </chart:ChartColorModel.CustomBrushes>
+                                    </chart:ChartColorModel>
+                                </chart:DoughnutSeries.ColorModel>
+                                <chart:DoughnutSeries.AdornmentsInfo>
+                                    <chart:ChartAdornmentInfo AdornmentsPosition="Bottom" SegmentLabelContent="Percentage" HorizontalAlignment="Center" VerticalAlignment="Center" ShowLabel="True"/>
+                                </chart:DoughnutSeries.AdornmentsInfo>
+                            </chart:DoughnutSeries>
+                        </chart:SfChart>
+
+
+                    </Grid>
+
+
+
+                </Grid>
+
+            </Grid>
+        </SiaSf:TabItemExt>
+
+        <SiaSf:TabItemExt Name="tabItemExt3"  Header="Consulta Clasificacion ABC Detallado" FontSize="13"  >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <Style x:Key="botones-menu">
+                        <Setter Property="Control.Background" Value="#FF9800"/>
+                        <Setter Property="Control.BorderBrush" Value="{x:Null}"/>
+                        <Setter Property="Control.Foreground" Value="White"/>
+                        <Setter Property="Control.Height" Value="40"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="Control.Margin" Value="0 0 5 0"/>
+                        <Setter Property="Control.Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="Control.IsMouseOver" Value="True">
+                                <Setter Property="Control.Background" Value="#FF117A65"/>
+                                <Setter Property="Control.Cursor" Value="Hand"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style x:Key="Tit_dat">
+                        <Setter Property="Control.Margin" Value="10 0 0 0"/>
+                        <Setter Property="Control.Foreground" Value="#03A9F4"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                        <Setter Property="Control.FontSize" Value="18"/>
+                    </Style>
+                    <Style TargetType="Border" x:Key="borde">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Height" Value="Auto"/>
+                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Direction="0" ShadowDepth="0.5" BlurRadius="5" Color="Black"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                    <Style x:Key="title">
+                        <Setter Property="Control.FontSize" Value="18"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+                        <Setter Property="Control.Foreground" Value="#FFC107"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                    </Style>
+                    <Style x:Key="value">
+                        <Setter Property="Control.FontSize" Value="16"/>
+                        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+                        <Setter Property="Control.VerticalAlignment" Value="Center"/>
+                        <Setter Property="Control.Foreground" Value="Black"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                        <Setter Property="Control.Margin" Value="5 0 5 0"/>
+                    </Style>
+                </Grid.Resources>
+
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Style="{StaticResource borde}" Background="Orange">
+                        <Grid>
+                            <TextBlock Text="Consulta ABC Detallado" FontWeight="Bold" VerticalAlignment="Center" Margin="5 0 0 0" Foreground="Black" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="1" Style="{StaticResource borde}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Registros: " Grid.Row="0" Style="{StaticResource title}"/>
+                            <Viewbox Stretch="Uniform" Grid.Row="1">
+                                <TextBlock x:Name="Tb2_Total1" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                            </Viewbox>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="2" Style="{StaticResource borde}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Cantidad: " Grid.Row="0" Style="{StaticResource title}"/>
+                            <Viewbox Stretch="Uniform" Grid.Row="1">
+                                <TextBlock x:Name="Tb2_Total2" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                            </Viewbox>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="3" Style="{StaticResource borde}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Suma Subtotal: " Grid.Row="0" Style="{StaticResource title}"/>
+                            <Viewbox Stretch="Uniform" Grid.Row="1">
+                                <TextBlock x:Name="Tb2_Total3" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                            </Viewbox>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="4" Style="{StaticResource borde}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Suma Subtotal: " Grid.Row="0" Style="{StaticResource title}"/>
+                            <Viewbox Stretch="Uniform" Grid.Row="1">
+                                <TextBlock x:Name="Tb2_Total4" Text="{Binding StringFormat=c}" Grid.Row="1" Style="{StaticResource value}" />
+                            </Viewbox>
+                        </Grid>
+                    </Border>
+
+                    <StackPanel Grid.Column="5" VerticalAlignment="Center">
+                        <Button Name="Tb2_BtnExport" Content="Exportar Consulta a Xls"  Click="Tb2_BtnExport_Click" Tag="1" Grid.Column="5" Cursor="Hand" Style="{StaticResource botones-menu}"  Width="150"/>
+                        <Button Name="Tb2_BtnHidden" Content="Ocultar Graficos"  Click="Tb2_BtnHidden_Click" Tag="0" Grid.Column="5" Cursor="Hand" Style="{StaticResource botones-menu}" Background="#373737" Width="150"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1" Name="Tb2_GridSpan" Margin="5" >
+
+
+                    <SiaSf:SfDataGrid Grid.RowSpan="2" FrozenColumnCount="2" AllowResizingColumns="True" Grid.Row="1" x:Name="Tb2_GridClasific"  EnableDataVirtualization = "True" AutoGenerateColumns="False" ShowGroupDropArea="True" FontSize="10" AllowFiltering="True" Margin="5" Tag="1"  RowSelectionBrush="#7FFFA500" HeaderStyle="{StaticResource headerStyle}" FilterChanged="VentasPorProducto_FilterChanged">
+                        <SiaSf:SfDataGrid.Columns>
+                            <SiaSf:GridTextColumn HeaderText="Emp" MappingName="cod_emp" Width="55" />
+                            <SiaSf:GridTextColumn HeaderText="Nombre Empresa" MappingName="nom_emp" Width="100"/>
+                            <SiaSf:GridTextColumn HeaderText="Bod" MappingName="cod_bod" Width="50" />
+                            <SiaSf:GridTextColumn HeaderText="Bodega" MappingName="nom_bod" Width="100"/>
+                            <SiaSf:GridTextColumn HeaderText="Linea" MappingName="cod_tip" Width="50" />
+                            <SiaSf:GridTextColumn HeaderText="Nombre Linea" MappingName="nom_tip" Width="100"/>
+                            <SiaSf:GridTextColumn HeaderText="Provedor" MappingName="cod_prv" Width="65"/>
+                            <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="cod_ref" Width="100" />
+                            <SiaSf:GridTextColumn HeaderText="Nombre Producto" MappingName="nom_ref" Width="180" />
+                            <SiaSf:GridNumericColumn HeaderText="Tot Cnt Grup" MappingName="totcntgrup" Width="100" NumberDecimalDigits="2"/>
+                            <SiaSf:GridNumericColumn HeaderText="Tot Cnt Emp" MappingName="totcntemp" Width="100" NumberDecimalDigits="2"/>
+                            <SiaSf:GridNumericColumn HeaderText="Tot Cnt Gru Ref" MappingName="totcntgrupref" Width="100" NumberDecimalDigits="2"/>
+                            <SiaSf:GridNumericColumn HeaderText="Tot Cnt Emp Ref" MappingName="totcntempref" Width="100" NumberDecimalDigits="2"/>
+                            <SiaSf:GridNumericColumn HeaderText="Tot Cnt Emp Ref Bod" MappingName="totcntemprefbod" Width="100" NumberDecimalDigits="2"/>
+                            <SiaSf:GridNumericColumn HeaderText="Vta Cnt Par Emp Ref" MappingName="vta_cntparempref" Width="100" NumberDecimalDigits="2"/>
+                            <SiaSf:GridNumericColumn HeaderText="vta Cnt Par Emp Bod" MappingName="vta_cntparemprefbod" Width="100" NumberDecimalDigits="2"/>
+                            <SiaSf:GridCurrencyColumn HeaderText="Tot Subemp" MappingName="totsubemp" Width="100"/>
+
+                        </SiaSf:SfDataGrid.Columns>
+
+                    </SiaSf:SfDataGrid>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid Grid.Row="3"  Grid.ColumnSpan="2"   >
+                        <Grid.Resources>
+                            <DataTemplate x:Key="headerTemplate">
+                                <TextBlock FontSize="12" Foreground="Black" Margin="5" Text="{Binding}"/>
+                            </DataTemplate>
+                            <DataTemplate x:Key="labelTemplate">
+                                <TextBlock FontSize="10" Foreground="Orange"  Margin="1" Text="{Binding Path=LabelContent}"/>
+                            </DataTemplate>
+                            <Style TargetType="Line" x:Key="AxisStyle">
+                                <Setter Property="Stroke" Value="DarkGray"  />
+                                <Setter Property="StrokeThickness" Value="1"/>
+                            </Style>
+                        </Grid.Resources>
+
+                        <chart:SfChart x:Name="Chart2" AreaBorderThickness="0,1,1,0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
+                            <chart:SfChart.Header>
+                                <TextBlock FontSize="10" FontFamily="Segoe UI" Foreground="Orange" Margin="0,0,0,5">Cantidad Total por empresa</TextBlock>
+                            </chart:SfChart.Header>
+                            <chart:SfChart.PrimaryAxis>
+                                <SiaSf:CategoryAxis Header="Empresas" FontSize="10" Foreground="Orange" PlotOffset="30" LabelTemplate="{StaticResource labelTemplate}" HeaderTemplate="{StaticResource headerTemplate}" AxisLineStyle="{StaticResource AxisStyle}" MajorTickLineStyle="{StaticResource AxisStyle}"/>
+                            </chart:SfChart.PrimaryAxis>
+                            <SiaSf:SfChart.SecondaryAxis>
+                                <SiaSf:NumericalAxis Foreground="Orange" Header="Total" HeaderTemplate="{StaticResource headerTemplate}"   LabelTemplate="{StaticResource labelTemplate}"  AxisLineStyle="{StaticResource AxisStyle}"  MajorTickLineStyle="{StaticResource AxisStyle}"/>
+                            </SiaSf:SfChart.SecondaryAxis>
+
+
+                            <chart:AreaSeries  Name="Tb2_chartEmpCnt" XBindingPath="nom_emp"  YBindingPath="totcntemp" Interior="Orange" ShowTooltip="True" EnableAnimation="True" AnimationDuration="00:00:03">
+                                <chart:AreaSeries.AdornmentsInfo>
+                                    <chart:ChartAdornmentInfo AdornmentsPosition="Bottom"  HorizontalAlignment="Center" VerticalAlignment="Center" ShowLabel="True">
+                                        <chart:ChartAdornmentInfo.LabelTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Ellipse Height="30" Width="30" Stroke="Gray" Fill="Orange" StrokeThickness="2"  HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{Binding}" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI"  FontSize="12"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </chart:ChartAdornmentInfo.LabelTemplate>
+                                    </chart:ChartAdornmentInfo>
+                                </chart:AreaSeries.AdornmentsInfo>
+                            </chart:AreaSeries>
+
+                        </chart:SfChart>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </SiaSf:TabItemExt>
+
+
+    </SiaSf:TabControlExt>
+
+</UserControl>

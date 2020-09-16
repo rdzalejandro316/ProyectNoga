@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="SiasoftAppExt.ArchivoNotasContables"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SiasoftAppExt"
+             xmlns:SiaSf="http://schemas.syncfusion.com/wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1200" Background="White">
+
+    <UserControl.Resources>
+        <Style TargetType="SiaSf:GridCell">
+            <Setter Property="BorderBrush" Value="#03A9F4"/>
+        </Style>
+        <Style TargetType="SiaSf:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="Background" Value="#373737"/>
+            <Setter Property="BorderBrush" Value="#03A9F4"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="SiaSf:GridStackedHeaderCellControl">
+            <Setter Property="Background" Value="#373737"/>
+            <Setter Property="BorderBrush" Value="#03A9F4"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="10"/>
+        </Style>
+        <Style TargetType="SiaSf:FilterToggleButton">
+            <Setter Property="Height" Value="15"/>
+            <Setter Property="Width" Value="15" />
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#373737">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Fecha Inicial : " VerticalAlignment="Center" Foreground="White" Margin="10 0 0 0" FontWeight="Bold"/>
+            <DatePicker Name="Tx_fecIni" Grid.Column="1" VerticalAlignment="Center"/>
+
+            <TextBlock Text="Fecha Final : " Grid.Column="2" VerticalAlignment="Center" Foreground="White" Margin="10 0 0 0" FontWeight="Bold"/>
+            <DatePicker Name="Tx_fecFin" Grid.Column="3" VerticalAlignment="Center"/>
+
+            <Button Name="BtnConsular" Grid.Column="4" Content="Consultar" Height="40" Margin="10" Background="#03A9F4" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Click="BtnConsular_Click"/>
+
+            <Button Name="BtnExportar" Grid.Column="5" Content="Exportar Xls" Height="40" Width="100" HorizontalAlignment="Right"  Margin="10" Background="#03A9F4" Foreground="White" BorderBrush="{x:Null}" Cursor="Hand" Click="BtnExportar_Click"/>
+
+            <TextBlock Grid.Column="5" Name="Tx_empresa" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#f1c40f" FontSize="20" FontWeight="Bold"/>
+        </Grid>
+
+        <SiaSf:SfBusyIndicator Name="sfBusyIndicator" Grid.Row="1" Margin="5" VerticalAlignment="Center" FontSize="14" AnimationSpeed="100"  AnimationType="Umbrella" Header="Cargando Datos - SiasoftApp" Height="200" IsBusy="False" Panel.ZIndex="1" Foreground="#03A9F4"/>
+
+        <Grid Grid.Row="1">
+            <SiaSf:SfDataGrid  x:Name="dataGrid" AllowResizingColumns="True" EnableDataVirtualization = "True"  AutoGenerateColumns="False" ShowGroupDropArea="False" FontSize="10" AllowFiltering="True"  HeaderStyle="{StaticResource headerStyle}" Background="#FFF9F8F8">
+                <SiaSf:SfDataGrid.StackedHeaderRows>
+                    <SiaSf:StackedHeaderRow>
+                        <SiaSf:StackedHeaderRow.StackedColumns>
+                            <SiaSf:StackedColumn  ChildColumns="notas_co,id_usu_a,user_name_a" HeaderText="03 - Notas de Contabilidad"/>
+                            <SiaSf:StackedColumn  ChildColumns="notas_cocli,id_usu_b,user_name_b" HeaderText="03A - Notas de Contabilidad Clientes"/>
+                            <SiaSf:StackedColumn  ChildColumns="notas_coprv,id_usu_c,user_name_c" HeaderText="03B - Notas de Contabilidad Provedore"/>
+                            <SiaSf:StackedColumn  ChildColumns="notas_deb,id_usu_d,user_name_d" HeaderText="07 - Notas Debito"/>
+                            <SiaSf:StackedColumn  ChildColumns="prestamos,id_usu_e,user_name_e" HeaderText="29 - Prestamos"/>
+                            <SiaSf:StackedColumn  ChildColumns="dev_compra,id_usu_f,user_name_f" HeaderText="16 - Devolucion en Compras"/>
+                        </SiaSf:StackedHeaderRow.StackedColumns>
+                    </SiaSf:StackedHeaderRow>
+                </SiaSf:SfDataGrid.StackedHeaderRows>
+
+                <SiaSf:SfDataGrid.Columns>
+                    <SiaSf:GridTextColumn HeaderText="Notas Co" MappingName="notas_co" Width="100" />
+                    <SiaSf:GridTextColumn HeaderText="Id Usu"  MappingName="id_usu_a" Width="60"/>
+                    <SiaSf:GridTextColumn HeaderText="Nombre Usuario"  MappingName="user_name_a" Width="110"/>
+
+                    <SiaSf:GridTextColumn HeaderText="Notas Con Cli" MappingName="notas_cocli" Width="100" />
+                    <SiaSf:GridTextColumn HeaderText="Id Usu"  MappingName="id_usu_b" Width="60"/>
+                    <SiaSf:GridTextColumn HeaderText="Nombre Usuario"  MappingName="user_name_b" Width="110"/>
+
+                    <SiaSf:GridTextColumn HeaderText="Notas Con Prv"  MappingName="notas_coprv" Width="100"/>
+                    <SiaSf:GridTextColumn HeaderText="Id Usu"  MappingName="id_usu_c" Width="60"/>
+                    <SiaSf:GridTextColumn HeaderText="Nombre Usuario"  MappingName="user_name_c" Width="110"/>
+                    
+                    <SiaSf:GridTextColumn HeaderText="Notas Debito"  MappingName="notas_deb" Width="100"/>
+                    <SiaSf:GridTextColumn HeaderText="Id Usu"  MappingName="id_usu_d" Width="60"/>
+                    <SiaSf:GridTextColumn HeaderText="Nombre Usuario"  MappingName="user_name_d" Width="110"/>
+
+                    <SiaSf:GridTextColumn HeaderText="Prestamos"  MappingName="prestamos" Width="100"/>
+                    <SiaSf:GridTextColumn HeaderText="Id Usu"  MappingName="id_usu_e" Width="60"/>
+                    <SiaSf:GridTextColumn HeaderText="Nombre Usuario"  MappingName="user_name_e" Width="110"/>
+
+                    <SiaSf:GridTextColumn HeaderText="Dev Compra"  MappingName="dev_compra" Width="100"/>
+                    <SiaSf:GridTextColumn HeaderText="Id Usu"  MappingName="id_usu_f" Width="60"/>
+                    <SiaSf:GridTextColumn HeaderText="Nombre Usuario"  MappingName="user_name_f" Width="110"/>
+                </SiaSf:SfDataGrid.Columns>
+            </SiaSf:SfDataGrid>
+        </Grid>
+
+    </Grid>
+</UserControl>

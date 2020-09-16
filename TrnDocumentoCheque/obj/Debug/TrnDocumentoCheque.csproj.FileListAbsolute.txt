@@ -1,0 +1,14 @@
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque.csprojAssemblyReference.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque.g.cs
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque_MarkupCompile.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque_MarkupCompile.lref
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque.baml
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque.g.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque.Properties.Resources.resources
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque.csproj.GenerateResource.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque.csproj.CoreCompileInputs.cache
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque.csproj.CopyComplete
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\TrnDocumentoCheque\obj\Debug\TrnDocumentoCheque.pdb
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\TrnDocumentoCheque.dll
+C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\TrnDocumentoCheque.pdb
