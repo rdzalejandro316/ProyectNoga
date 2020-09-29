@@ -4,17 +4,17 @@
 library
 C#
 .cs
-C:\SiasoftApp\SiasoftGSNueva\SiasoftGSV2019\SiasoftGSV2019_actual\Library\project\Co_Balance\obj\Debug\
+C:\Users\aleja\Desktop\Business\NOGA\Siasoft\Library\project\Co_Balance\obj\Debug\
 Co_Balance
 none
 false
 DEBUG;TRACE
 
-1-1932060041
+5-1122115314
 
-81836706896
-29-315753288
-Co_Balance.xaml;
+9-709178680
+29-49766630
+BalanceAcumuladoCuenta.xaml;Co_Balance.xaml;Co_BalanceAux.xaml;Detalle.xaml;Reporte.xaml;
 
 False
 
