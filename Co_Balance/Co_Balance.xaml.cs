@@ -94,7 +94,7 @@ namespace SiasoftAppExt
                 NV2.Text = "9";
 
                 DataTable dtper = SiaWin.Func.SqlDT("select rtrim(Periodo) as periodo,rtrim(PeriodoNombre) as periodonombre From Periodos where TipoPeriodo=1", "", 0);
-                dtper.Rows.Add("15", "Todos");
+                dtper.Rows.Add("14", "Todos");
                 CbPeriodo.ItemsSource = dtper.DefaultView;
 
 
@@ -923,7 +923,7 @@ namespace SiasoftAppExt
                 if (((DataTable)slowTask.Result) == null)
                 {
                     this.sfBusyIndicator.IsBusy = false;
-                    MessageBox.Show("cuenta si movientos", "alerta", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    MessageBox.Show("cuenta si movientos", "Alerta", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     return;
                 }
                 if (((DataTable)slowTask.Result).Rows.Count > 0)
@@ -1155,10 +1155,14 @@ namespace SiasoftAppExt
                 {
                     string periodo = CbPeriodo.SelectedValue.ToString().Trim();
 
-                    if (periodo == "15")
+                    //MessageBox.Show("A!11:"+ periodo);
+
+                    if (periodo == "14")
                     {
+                        
                         Binding BindingSalAnt = new Binding("sal_ant") { StringFormat = "N2" };
-                        sal_finCol.DisplayBinding = BindingSalAnt;
+                        sal_antCol.DisplayBinding = BindingSalAnt;
+                        //sal_finCol.DisplayBinding = BindingSalAnt;
 
                         Binding BindingDebito = new Binding("debito") { StringFormat = "N2" };
                         debitoCol.DisplayBinding = BindingDebito;
@@ -1171,11 +1175,12 @@ namespace SiasoftAppExt
                     }
                     else
                     {
-                        int sal_ant = Convert.ToInt32(periodo);
-                        string cod = sal_ant < 10 ? "0" + (sal_ant - 1).ToString() : (sal_ant - 1).ToString();
+                        int sal_ant = Convert.ToInt32(periodo) - 1;
+                        string cod = sal_ant < 10 ? "0" + (sal_ant).ToString().Trim() : (sal_ant).ToString().Trim();
                         string c_sal = "sal_" + cod;
-                        if ((sal_ant - 1) == 0) c_sal = "sal_ant";
+                        if ((sal_ant) == 0) c_sal = "sal_ant";
 
+                        //MessageBox.Show(sal_ant.ToString()+"-"+periodo.ToString()+"-"+c_sal);
                         Binding BindingSalAnt = new Binding(c_sal) { StringFormat = "N2" };
                         sal_antCol.DisplayBinding = BindingSalAnt;
 

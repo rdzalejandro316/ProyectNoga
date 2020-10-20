@@ -195,12 +195,13 @@
 
                 <SiaSf:SfDataGrid  Grid.Row="0" x:Name="dataGridConsulta" AllowSorting="False" AllowGrouping="False"  AutoGenerateColumns="False"                                                                       
                                    ShowGroupDropArea="False"  AllowFiltering="True" HeaderStyle="{StaticResource headerStyle}"   CellStyle="{StaticResource gridStyle}" SelectionUnit="Row" SelectionMode="Single" NavigationMode="Cell" MouseDoubleClick="dataGridConsulta_MouseDoubleClick">
-                    
-                    
+
+
                     <SiaSf:SfDataGrid.Columns>
                         <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="cod_cta" Width="85" AllowFiltering="True"/>
-                        <SiaSf:GridTextColumn HeaderText="Nombre Cuenta" ColumnSizer="AutoLastColumnFill" MappingName="nom_cta" AllowFiltering="True" AllowResizing="True" />
-                        <!--<SiaSf:GridTextColumn HeaderText="Nombre Cuenta" Width="350" MappingName="nom_cta" AllowFiltering="True" AllowResizing="True" />-->
+                        <!--<SiaSf:GridTextColumn HeaderText="Nombre Cuenta" ColumnSizer="AutoLastColumnFill" MappingName="nom_cta" AllowFiltering="True" AllowResizing="True" />-->
+                        <SiaSf:GridTextColumn HeaderText="Nombre Cuenta" Width="400" MappingName="nom_cta" AllowFiltering="True" AllowResizing="True"/>
+                        <SiaSf:GridTextColumn HeaderText="Nombre Cuenta" MappingName="nomcta" IsHidden="True" ColumnSizer="AutoLastColumnFill"/>
                         <SiaSf:GridTextColumn HeaderText="Tipo" MappingName="tip_cta" Width="50"/>
                         <SiaSf:GridTextColumn HeaderText="Nivel" MappingName="niv_cta" Width="50"/>
                         <SiaSf:GridTextColumn HeaderText="Nat" MappingName="nat_cta" Width="50" />
@@ -212,6 +213,7 @@
                         <SiaSf:GridTextColumn MappingName="dir1" HeaderText="direccion" IsHidden="True"/>
                         <SiaSf:GridTextColumn MappingName="tel1" HeaderText="Telefono" IsHidden="True"/>
                         <SiaSf:GridTextColumn MappingName="cod_ter" HeaderText="Cod_Ter" IsHidden="True" />
+                        <SiaSf:GridTextColumn MappingName="nom_ter" HeaderText="Nom_ter" IsHidden="True" />
 
                         <SiaSf:GridTemplateColumn MappingName="Detalle" Width="50"  AllowFiltering="False">
                             <SiaSf:GridTemplateColumn.CellTemplate>
@@ -229,7 +231,57 @@
                             </SiaSf:GridTemplateColumn.CellTemplate>
                         </SiaSf:GridTemplateColumn>
 
+                        <SiaSf:GridTextColumn MappingName="deb_01" HeaderText="Deb_01" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_01" HeaderText="Cre_01" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_01" HeaderText="Sal_01" IsHidden="True"/>
 
+                        <SiaSf:GridTextColumn MappingName="deb_02" HeaderText="Deb_02" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_02" HeaderText="Cre_02" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_02" HeaderText="Sal_02" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_03" HeaderText="Deb_03" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_03" HeaderText="Cre_03" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_03" HeaderText="Sal_03" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_04" HeaderText="Deb_04" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_04" HeaderText="Cre_04" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_04" HeaderText="Sal_04" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_05" HeaderText="Deb_05" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_05" HeaderText="Cre_05" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_05" HeaderText="Sal_05" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_06" HeaderText="Deb_06" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_06" HeaderText="Cre_06" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_06" HeaderText="Sal_06" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_07" HeaderText="Deb_07" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_07" HeaderText="Cre_07" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_07" HeaderText="Sal_07" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_08" HeaderText="Deb_08" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_08" HeaderText="Cre_08" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_08" HeaderText="Sal_08" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_09" HeaderText="Deb_09" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_09" HeaderText="Cre_09" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_09" HeaderText="Sal_09" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_10" HeaderText="Deb_10" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_10" HeaderText="Cre_10" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_10" HeaderText="Sal_10" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_11" HeaderText="Deb_11" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_11" HeaderText="Cre_11" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_11" HeaderText="Sal_11" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_12" HeaderText="Deb_12" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_12" HeaderText="Cre_12" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_12" HeaderText="Sal_12" IsHidden="True"/>
+
+                        <SiaSf:GridTextColumn MappingName="deb_13" HeaderText="Deb_13" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="cre_13" HeaderText="Cre_13" IsHidden="True"/>
+                        <SiaSf:GridTextColumn MappingName="sal_13" HeaderText="Sal_13" IsHidden="True"/>
                     </SiaSf:SfDataGrid.Columns>
                 </SiaSf:SfDataGrid>
 
@@ -429,7 +481,6 @@
                                 <SiaSf:GridNumericColumn HeaderText="Saldo Final" Width="120" MappingName="sal_fin" TextAlignment="Right" NumberDecimalDigits="2" NumberDecimalSeparator="." NumberGroupSizes="3" NumberGroupSeparator=","/>
                             </SiaSf:SfDataGrid.Columns>
                         </SiaSf:SfDataGrid>
-
                         <Grid Grid.Row="1" Margin="10">
                             <Border Style="{StaticResource ShadowGrid}"/>
                             <Grid Margin="10,0,10,0">
@@ -446,32 +497,31 @@
                                 <Grid.Resources>
                                     <Style TargetType="TextBlock" x:Key="title">
                                         <Setter Property="VerticalAlignment" Value="Center"/>
-                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
                                         <Setter Property="FontWeight" Value="Bold"/>
                                     </Style>
                                     <Style TargetType="TextBlock" x:Key="value">
                                         <Setter Property="VerticalAlignment" Value="Center"/>
-                                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
                                         <Setter Property="Margin" Value="10,0,0,0"/>
                                         <Setter Property="Foreground" Value="{StaticResource ColorMain}"/>
                                     </Style>
                                 </Grid.Resources>
 
-                                <TextBlock Text="Saldo Anterior :" Grid.Column="0" Grid.Row="0" Style="{StaticResource title}"/>
-                                <TextBlock Name="TxSaldoInicialAño" Text="0" Grid.Column="1" Grid.Row="0" Style="{StaticResource value}"/>
+                                <TextBlock Text="Saldo Anterior" Grid.Column="0" Grid.Row="0" Style="{StaticResource title}"/>
+                                <TextBlock Name="TxSaldoInicialAño" Text="0" Grid.Column="0" Grid.Row="1" Style="{StaticResource value}"/>
 
-                                <TextBlock Text="Saldo Final :" Grid.Column="2" Grid.Row="0" Style="{StaticResource title}"/>
-                                <TextBlock Name="TxSaldoFinalAño" Text="0" Grid.Column="3" Grid.Row="0" Style="{StaticResource value}"/>
+                                <TextBlock Text="Saldo Final" Grid.Column="3" Grid.Row="0" Style="{StaticResource title}"/>
+                                <TextBlock Name="TxSaldoFinalAño" Text="0" Grid.Column="3" Grid.Row="1" Style="{StaticResource value}"/>
 
-                                <TextBlock Text="Debito :" Grid.Column="0" Grid.Row="1" Style="{StaticResource title}"/>
+                                <TextBlock Text="Debitos" Grid.Column="1" Grid.Row="0" Style="{StaticResource title}"/>
                                 <TextBlock Name="TxDebitoAño" Text="0" Grid.Column="1" Grid.Row="1" Style="{StaticResource value}"/>
 
-                                <TextBlock Text="Credito :" Grid.Column="2" Grid.Row="1" Style="{StaticResource title}"/>
-                                <TextBlock Name="TxCreditoAño" Text="0" Grid.Column="3" Grid.Row="1" Style="{StaticResource value}"/>
+                                <TextBlock Text="Creditos" Grid.Column="2" Grid.Row="0" Style="{StaticResource title}"/>
+                                <TextBlock Name="TxCreditoAño" Text="0" Grid.Column="2" Grid.Row="1" Style="{StaticResource value}"/>
 
                             </Grid>
                         </Grid>
-
                     </Grid>
 
                 </Grid>
