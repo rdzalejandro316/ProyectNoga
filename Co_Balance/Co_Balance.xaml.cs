@@ -363,7 +363,7 @@ namespace SiasoftAppExt
                     #region botones grid
 
 
-                    CbPeriodo.SelectedValue = "15";
+                    CbPeriodo.SelectedValue = "14";
 
 
                     #endregion
@@ -538,8 +538,7 @@ namespace SiasoftAppExt
             {
                 //DataRowView row = (DataRowView)dataGridConsulta.SelectedItems[0];
                 DataRowView row = (DataRowView)gr.SelectedItems[0];
-
-
+                
                 if (row == null)
                 {
                     MessageBox.Show("Registro sin datos");
@@ -550,20 +549,22 @@ namespace SiasoftAppExt
                     MessageBox.Show("Solo cuentas auxiliares");
                     return;
                 }
+                
                 string cod_cli = row["cod_ter"].ToString().Trim();
                 string cod_cta = row["cod_cta"].ToString().Trim();
 
-
+                
                 StringBuilder sb = new StringBuilder();
                 if (gr.Name == "dataGridConsulta")
                 {
-                    if (CbPeriodo.SelectedValue.ToString() == "15")
+
+                
+                    if (CbPeriodo.SelectedValue.ToString() == "14")
                     {
                         sb.Append(" declare @fechaIni as date ; set @fechaIni='" + fecha_ini.SelectedDate.Value.Date.ToShortDateString() + "';declare @fechaFin as date ; set @fechaFin='" + fecha_fin.SelectedDate.Value.Date.ToShortDateString() + "';");
                     }
                     else
-                    {
-
+                    {                
                         DateTime fi = fecha_ini.SelectedDate.Value.Date;
                         string f_i = "01/" + CbPeriodo.SelectedValue + "/" + fi.Year;
                         int mes = Convert.ToInt32(CbPeriodo.SelectedValue);
@@ -574,6 +575,7 @@ namespace SiasoftAppExt
                 }
                 else
                 {
+                    
                     sb.Append(" declare @fechaIni as date ; set @fechaIni='" + fecha_ini.SelectedDate.Value.Date.ToShortDateString() + "';declare @fechaFin as date ; set @fechaFin='" + fecha_fin.SelectedDate.Value.Date.ToShortDateString() + "';");
                 }
 

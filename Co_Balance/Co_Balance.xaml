@@ -428,7 +428,7 @@
                             <Setter Property="Background" Value="#373737"/>
                         </Style>
                     </Grid.Resources>
-                    <SiaSf:SfDataGrid x:Name="dataGridConsultaDetalle" AllowSorting="True" AllowGrouping="False" EnableDataVirtualization = "True" AutoGenerateColumns="True" ShowGroupDropArea="False"  AllowFiltering="True" HeaderStyle="{StaticResource headerStyle}"   CellStyle="{StaticResource gridStyle}" SelectionUnit="Row" SelectionMode="Single" NavigationMode="Cell" ColumnSizer="AutoWithLastColumnFill" AllowResizingColumns="True" Margin="5" SelectionChanged="dataGridConsultaDetalle_SelectionChanged">
+                    <SiaSf:SfDataGrid x:Name="dataGridConsultaDetalle" AllowSorting="True" AllowGrouping="False" EnableDataVirtualization = "True" AutoGenerateColumns="False" ShowGroupDropArea="False"  AllowFiltering="True" HeaderStyle="{StaticResource headerStyle}"   CellStyle="{StaticResource gridStyle}" SelectionUnit="Row" SelectionMode="Single" NavigationMode="Cell" ColumnSizer="AutoWithLastColumnFill" AllowResizingColumns="True" Margin="5" SelectionChanged="dataGridConsultaDetalle_SelectionChanged">
                         <SiaSf:SfDataGrid.Columns>
                             <SiaSf:GridTextColumn HeaderText="Codigo" MappingName="cod_cta" Width="85" AllowFiltering="True"/>
                             <SiaSf:GridTextColumn HeaderText="Nombre Cuenta" ColumnSizer="AutoLastColumnFill" MappingName="nom_cta" AllowFiltering="True" AllowResizing="True" />
